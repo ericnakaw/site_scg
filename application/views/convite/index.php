@@ -1,0 +1,77 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+<br>
+<br>
+<br>
+<!-- Page Content -->
+<div class="container">
+
+	<!-- Page Header -->
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Portifólio
+				<small>Convites</small>
+			</h1>
+		</div>
+	</div>
+	<!-- /.row -->
+
+	<!-- Projects Row -->
+	<div class="row">
+		<div class="col-md-4 portfolio-item">
+			<a href="<?=base_url('convite/casamento')?>">
+				<!-- 700x400 -->
+				<img class="img-responsive" src="<?=base_url('assets/img/carousel6_700x400.jpg')?>" alt="">
+			</a>
+			<h3>
+				<a href="<?=base_url('convite/casamento')?>">Casamento</a>
+			</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+		</div>
+		<div class="col-md-4 portfolio-item">
+			<a href="#">
+				<!-- 700x400 -->
+				<img class="img-responsive" src="<?=base_url('assets/img/convite_especial_700x400.jpg')?>" alt="">
+			</a>
+			<h3>
+				<a href="#">Especiais</a>
+			</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+		</div>
+		<div class="col-md-4 portfolio-item">
+			<a href="#">
+				<!-- 700x400 -->
+				<img class="img-responsive" src="<?=base_url('assets/img/15anos_700x400.jpg')?>" alt="">
+			</a>
+			<h3>
+				<a href="#">15 Anos</a>
+			</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+		</div>
+	</div>
+	<!-- /.row -->
+
+	<hr>
+
+	<!-- Pagination -->
+	<!--<div class="row text-center">
+		<div class="col-lg-12">
+			<ul class="pagination">
+				<li>
+					<a href="#">&laquo;</a>
+				</li>
+				<li class="active">
+					<a href="#">1</a>
+				</li>
+				<li>
+					<a href="#">&raquo;</a>
+				</li>
+			</ul>
+		</div>
+	</div>-->
+	<!-- /.row -->
+
+	<hr>
+
+</div>

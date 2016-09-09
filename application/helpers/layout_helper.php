@@ -11,7 +11,9 @@ function init_layout() {
     $CI->load->helper(array('layout', 'form', 'url', 'array', 'text'));
 
     set_layout('template', 'default');
-    set_layout('titulo', 'Sistema | ');
+    set_layout('titulo', 'Camila Golin | ');
+    set_layout('menu', load_content('template/menu/menu'));
+    set_layout('footer', load_content('template/footer/footer'));
     set_layout('conteudo', "Não foi carregado nenhum conteudo na variavel Sistema->layout['conteudo']");
 
     set_layout('header', load_css(array('bootstrap.min','carousel','landing-page','googleapis')), FALSE);
@@ -29,6 +31,17 @@ function set_layout($prop, $valor, $replace = TRUE) {
             $CI->sistema->layout[$prop] = '';
         }
         $CI->sistema->layout[$prop] .= $valor;
+    }
+}
+
+// Definir qual a view do bloco principal
+function load_content($view, $dados = NULL) {
+    $CI = & get_instance();
+    if ($view != NULL) {
+        // terceiro parametro(TRUE) e para retornar a view, e nao printar
+        return $CI->load->view("$view", array('dados' => $dados), TRUE);
+    } else {
+        return FALSE;
     }
 }
 
