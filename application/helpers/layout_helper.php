@@ -15,9 +15,12 @@ function init_layout() {
     set_layout('menu', load_content('template/menu/menu'));
     set_layout('footer', load_content('template/footer/footer'));
     set_layout('conteudo', "Não foi carregado nenhum conteudo na variavel Sistema->layout['conteudo']");
-
+    //CSS
     set_layout('header', load_css(array('bootstrap.min','carousel','landing-page','googleapis')), FALSE);
+    //set_layout('header', load_css(array('bootstrap-image-gallery'), 'assets/css/bootstrap-image-gallery'), FALSE);
+    //JS
     set_layout('header', load_js(array('jquery.min', 'bootstrap.min','ie10-viewport-bug-workaround','holder.min')), FALSE);
+    //set_layout('header', load_js(array('bootstrap-image-gallery','demo'), 'assets/js/bootstrap-image-gallery'), FALSE);
 }
 
 // Definir prodiedades do layout
@@ -74,15 +77,15 @@ function carregar_layout() {
 function load_css($arquivo = NULL, $pasta = 'assets/css', $media = 'all') {
     if ($arquivo != NULL):
         $CI = & get_instance();
-        $CI->load->helper('url');
-        $retorno = '';
-        if (is_array($arquivo)) {
-            foreach ($arquivo as $css) {
-                $retorno .= '<link rel="stylesheet" type="text/css" href="' . base_url("$pasta/$css.css") . '" media="' . $media . '" />';
-            }
-        } else {
-            $retorno .= '<link rel="stylesheet" type="text/css" href="' . base_url("$pasta/$arquivo.css") . '" media="' . $media . '" />';
+    $CI->load->helper('url');
+    $retorno = '';
+    if (is_array($arquivo)) {
+        foreach ($arquivo as $css) {
+            $retorno .= '<link rel="stylesheet" type="text/css" href="' . base_url("$pasta/$css.css") . '" media="' . $media . '" />';
         }
+    } else {
+        $retorno .= '<link rel="stylesheet" type="text/css" href="' . base_url("$pasta/$arquivo.css") . '" media="' . $media . '" />';
+    }
     endif;
     return $retorno;
 }

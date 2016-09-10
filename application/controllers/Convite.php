@@ -19,6 +19,12 @@ class Convite extends CI_Controller {
         set_layout('template', 'default');
         carregar_layout();
 	}
+	public function galeria(){
+		set_layout('titulo', 'Convite', FALSE);
+        set_layout('conteudo', load_conteudo('convite/galeria'));
+        set_layout('template', 'default');
+        carregar_layout();
+	}
 
 }
 

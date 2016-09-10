@@ -18,21 +18,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-xs-12 col-md-6 col-md-6">
 				<form action="" method="POST" role="form">
 					<fieldset>
-						<legend>Solicite um orçamento</legend>
+						<div class="col-xs-12 col-md-12 col-lg-12">
+							<legend>Solicite um orçamento</legend>
+						</div>
 
-						<div class="form-group">
+						<div class="form-group col-xs-12 col-md-12 col-lg-12">
 							<label for="nome">Nome:</label>
 							<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" autofocus required>
 						</div>
-						<div class="form-group">
+						<div class="form-group col-xs-12 col-md-6 col-lg-6">
 							<label for="email">E-mail:</label>
 							<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
 						</div>
-						<div class="form-group">
+						<div class="form-group col-xs-12 col-md-6 col-lg-6">
 							<label for="telefone">Telefone:</label>
 							<input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" required>
 						</div>
-						<div class="form-group">
+						<div class="form-group col-xs-12 col-md-6 col-lg-6">
 							<label for="evento">Evento:</label>
 							<select name="evento" id="evento" class="form-control" required>
 								<option value="" disabled selected>Selecione o seu evento</option>
@@ -44,15 +46,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<option value="outros">Outros</option>
 							</select>
 						</div>
-						<div class="form-group">
-							<label for="data">Data:</label>
+						<div class="form-group col-xs-12 col-md-6 col-lg-6">
+							<label for="data">Data do evento:</label>
 							<input type="date" name="data" id="data" class="form-control" value="" required>
 						</div>
-						<div class="form-group">
+						<div class="form-group col-xs-12 col-md-12 col-lg-12">
 							<label for="mensagem">Mensagem:</label>
 							<textarea name="mensagem" id="mensagem" class="form-control" rows="3"></textarea>
 						</div>
-						<button type="submit" class="btn btn-primary">Enviar</button>
+						<div class="col-xs-12 col-md-12 col-lg-12">
+							<button type="submit" class="btn btn-primary pull-right">Enviar</button>
+						</div>
 					</fieldset>
 				</form>
 			</div>

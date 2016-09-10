@@ -20,62 +20,62 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- Fotos -->
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
 		<a class="thumbnail" href="#">
-			<img class="img-responsive" src="<?=base_url('assets/img/carousel_400x300.jpg')?>" alt="">
+			<img class="img-responsive" src="<?=base_url('assets/img/casamento/carousel_400x300.jpg')?>" alt="">
 		</a>
 	</div>
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
 		<a class="thumbnail" href="#">
-			<img class="img-responsive" src="<?=base_url('assets/img/carousel_400x300.jpg')?>" alt="">
+			<img class="img-responsive" src="<?=base_url('assets/img/casamento/carousel_400x300.jpg')?>" alt="">
 		</a>
 	</div>
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
 		<a class="thumbnail" href="#">
-			<img class="img-responsive" src="<?=base_url('assets/img/carousel_400x300.jpg')?>" alt="">
+			<img class="img-responsive" src="<?=base_url('assets/img/casamento/carousel_400x300.jpg')?>" alt="">
 		</a>
 	</div>
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
 		<a class="thumbnail" href="#">
-			<img class="img-responsive" src="<?=base_url('assets/img/carousel_400x300.jpg')?>" alt="">
+			<img class="img-responsive" src="<?=base_url('assets/img/casamento/carousel_400x300.jpg')?>" alt="">
 		</a>
 	</div>
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
 		<a class="thumbnail" href="#">
-			<img class="img-responsive" src="<?=base_url('assets/img/carousel_400x300.jpg')?>" alt="">
+			<img class="img-responsive" src="<?=base_url('assets/img/casamento/carousel_400x300.jpg')?>" alt="">
 		</a>
 	</div>
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
 		<a class="thumbnail" href="#">
-			<img class="img-responsive" src="<?=base_url('assets/img/carousel_400x300.jpg')?>" alt="">
+			<img class="img-responsive" src="<?=base_url('assets/img/casamento/carousel_400x300.jpg')?>" alt="">
 		</a>
 	</div>
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
 		<a class="thumbnail" href="#">
-			<img class="img-responsive" src="<?=base_url('assets/img/carousel_400x300.jpg')?>" alt="">
+			<img class="img-responsive" src="<?=base_url('assets/img/casamento/carousel_400x300.jpg')?>" alt="">
 		</a>
 	</div>
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
 		<a class="thumbnail" href="#">
-			<img class="img-responsive" src="<?=base_url('assets/img/carousel_400x300.jpg')?>" alt="">
+			<img class="img-responsive" src="<?=base_url('assets/img/casamento/carousel_400x300.jpg')?>" alt="">
 		</a>
 	</div>
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
 		<a class="thumbnail" href="#">
-			<img class="img-responsive" src="<?=base_url('assets/img/carousel_400x300.jpg')?>" alt="">
+			<img class="img-responsive" src="<?=base_url('assets/img/casamento/carousel_400x300.jpg')?>" alt="">
 		</a>
 	</div>
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
 		<a class="thumbnail" href="#">
-			<img class="img-responsive" src="<?=base_url('assets/img/carousel_400x300.jpg')?>" alt="">
+			<img class="img-responsive" src="<?=base_url('assets/img/casamento/carousel_400x300.jpg')?>" alt="">
 		</a>
 	</div>
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
 		<a class="thumbnail" href="#">
-			<img class="img-responsive" src="<?=base_url('assets/img/carousel_400x300.jpg')?>" alt="">
+			<img class="img-responsive" src="<?=base_url('assets/img/casamento/carousel_400x300.jpg')?>" alt="">
 		</a>
 	</div>
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
 		<a class="thumbnail" href="#">
-			<img class="img-responsive" src="<?=base_url('assets/img/carousel_400x300.jpg')?>" alt="">
+			<img class="img-responsive" src="<?=base_url('assets/img/casamento/carousel_400x300.jpg')?>" alt="">
 		</a>
 	</div>
 	<!-- /.row -->
