@@ -38,9 +38,12 @@ class Contato extends CI_Controller {
         $this->email->subject('Email Test');
         $this->email->message('Testing the email class.');
 
-        var_dump($this->email->send());
-
-        print $this->email->print_debugger();
+        if ($this->email->send()) {
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+        //print $this->email->print_debugger();
     }
 
 }

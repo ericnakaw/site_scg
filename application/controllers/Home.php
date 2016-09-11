@@ -21,7 +21,7 @@ class Home extends CI_Controller {
 
         foreach ($data as $key => $value) {
             
-            $data2 = str_replace('C:\xampp\htdocs\site_scg', 'http://localhost/site_scg', $value);
+            $data2 = str_replace('C:\xampp\htdocs\site_scg', base_url(), $value);
             $card["title"] = "Teste";
             $card["img"] = str_replace('\\', '/', $data2);
             $card["text"] = "meu texto";

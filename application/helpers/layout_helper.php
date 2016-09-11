@@ -16,10 +16,10 @@ function init_layout() {
     set_layout('footer', load_content('template/footer/footer'));
     set_layout('conteudo', "Não foi carregado nenhum conteudo na variavel Sistema->layout['conteudo']");
     //CSS
-    set_layout('header', load_css(array('bootstrap.min','carousel','landing-page','googleapis')), FALSE);
+    set_layout('header', load_css(array('bootstrap.min', 'carousel', 'landing-page', 'googleapis')), FALSE);
     //set_layout('header', load_css(array('bootstrap-image-gallery'), 'assets/css/bootstrap-image-gallery'), FALSE);
     //JS
-    set_layout('header', load_js(array('jquery.min', 'bootstrap.min','ie10-viewport-bug-workaround','holder.min')), FALSE);
+    set_layout('header', load_js(array('jquery.min', 'bootstrap.min', 'ie10-viewport-bug-workaround', 'holder.min')), FALSE);
     //set_layout('header', load_js(array('bootstrap-image-gallery','demo'), 'assets/js/bootstrap-image-gallery'), FALSE);
 }
 
@@ -77,15 +77,15 @@ function carregar_layout() {
 function load_css($arquivo = NULL, $pasta = 'assets/css', $media = 'all') {
     if ($arquivo != NULL):
         $CI = & get_instance();
-    $CI->load->helper('url');
-    $retorno = '';
-    if (is_array($arquivo)) {
-        foreach ($arquivo as $css) {
-            $retorno .= '<link rel="stylesheet" type="text/css" href="' . base_url("$pasta/$css.css") . '" media="' . $media . '" />';
+        $CI->load->helper('url');
+        $retorno = '';
+        if (is_array($arquivo)) {
+            foreach ($arquivo as $css) {
+                $retorno .= '<link rel="stylesheet" type="text/css" href="' . base_url("$pasta/$css.css") . '" media="' . $media . '" />';
+            }
+        } else {
+            $retorno .= '<link rel="stylesheet" type="text/css" href="' . base_url("$pasta/$arquivo.css") . '" media="' . $media . '" />';
         }
-    } else {
-        $retorno .= '<link rel="stylesheet" type="text/css" href="' . base_url("$pasta/$arquivo.css") . '" media="' . $media . '" />';
-    }
     endif;
     return $retorno;
 }
@@ -113,6 +113,66 @@ function load_js($arquivo = NULL, $pasta = 'assets/js', $remoto = FALSE) {
         }
     }
     return $retorno;
+}
+
+//gera uma miniatura de uma imagem caso ela ainda não exista
+function thumb($imagem = NULL, $largura = 100, $altura = 75, $geratag = TRUE) {
+    $CI = & get_instance();
+    $CI->load->helper('file');
+    $thumb = $largura . 'x' . $altura . '_' . $imagem;
+    $thumbinfo = get_file_info('./uploads/thumbs/' . $thumb);
+    if ($thumbinfo != FALSE):
+        $retorno = base_url('uploads/thumbs/' . $thumb);
+    else:
+        $CI->load->library('image_lib');
+        $config['image_library'] = 'gd2';
+        $config['source_image'] = './uploads/' . $imagem;
+        $config['new_image'] = './uploads/thumbs/' . $thumb;
+        $config['maintain_ratio'] = TRUE;
+        $config['width'] = $largura;
+        $config['height'] = $altura;
+        $CI->image_lib->initialize($config);
+        if ($CI->image_lib->resize()):
+            $CI->image_lib->clear();
+            $retorno = base_url('uploads/thumbs/' . $thumb);
+        else:
+            $retorno = FALSE;
+        endif;
+    endif;
+    if ($geratag && $retorno != FALSE)
+        $retorno = '<img src="' . $retorno . '" alt="" />';
+    return $retorno;
+}
+
+function enviar_email($para, $assunto, $menssagem, $cc = '', $co = '') {
+    $CI = & get_instance();
+    $CI->load->library('email');
+    $config['protocol'] = 'smtp';
+    $config['smtp_host'] = 'ssl://smtp.gmail.com';
+    $config['smtp_port'] = '465';
+    $config['smtp_timeout'] = '7';
+    $config['smtp_user'] = 'email@gmail.com';
+    $config['smtp_pass'] = 'password';
+    $config['charset'] = 'utf-8';
+    $config['newline'] = "\r\n";
+    $config['mailtype'] = 'html'; // text or html
+    $config['validation'] = TRUE; // bool whether to validate email or not      
+
+    $CI->email->initialize($config);
+
+    $CI->email->from('contato@camilagolin.com.br', 'Formulario de Contato');
+    $CI->email->to($para);
+    $CI->email->cc($cc);
+    $CI->email->bcc($co);
+
+    $CI->email->subject($assunto);
+    $CI->email->message($menssagem);
+
+    if ($CI->email->send()) {
+        return TRUE;
+    } else {
+        return TRUE;
+    }
 }
 
 /*
@@ -270,91 +330,7 @@ function get_msg($id, $printar = TRUE) {
     return FALSE;
 }
 
-//verifica se o usuário atual é administrador
-function is_admin($set_msg = FALSE) {
-    $CI = & get_instance();
-    $user_admin = $CI->session->userdata('user_admin');
-    if (!isset($user_admin) || $user_admin != TRUE):
-        if ($set_msg)
-            set_msg('msgerro', 'Seu usuário não tem permissão para executar esta operação', 'erro');
-        return FALSE;
-    else:
-        return TRUE;
-    endif;
-}
 
-//gera um breadcrumb com base no controller atual
-function breadcrumb() {
-    $CI = & get_instance();
-    $CI->load->helper('url');
-    $classe = ucfirst($CI->router->class);
-    if ($classe == 'Painel'):
-        $classe = anchor($CI->router->class, 'Início');
-    else:
-        $classe = anchor($CI->router->class, $classe);
-    endif;
-    $metodo = ucwords(str_replace('_', ' ', $CI->router->method));
-    if ($metodo && $metodo != 'Index'):
-        $metodo = " &raquo; " . anchor($CI->router->class . "/" . $CI->router->method, $metodo);
-    else:
-        $metodo = '';
-    endif;
-    return '<p>Sua localização: ' . anchor('painel', 'Painel') . ' &raquo; ' . $classe . $metodo . '</p>';
-}
-
-//seta um registro na tabela de auditoria
-function auditoria($operacao, $obs = '', $query = TRUE) {
-    $CI = & get_instance();
-    $CI->load->library('session');
-    $CI->load->model('auditoria_model', 'auditoria');
-    if ($query):
-        $last_query = $CI->db->last_query();
-    else:
-        $last_query = '';
-    endif;
-    if (esta_logado(FALSE)):
-        $user_id = $CI->session->userdata('user_id');
-        $user_login = $CI->usuarios->get_byid($user_id)->row()->login;
-    else:
-        $user_login = 'Desconhecido';
-    endif;
-    $dados = array(
-        'usuario' => $user_login,
-        'operacao' => $operacao,
-        'query' => $last_query,
-        'observacao' => $obs,
-    );
-    $CI->auditoria->do_insert($dados);
-}
-
-//gera uma miniatura de uma imagem caso ela ainda não exista
-function thumb($imagem = NULL, $largura = 100, $altura = 75, $geratag = TRUE) {
-    $CI = & get_instance();
-    $CI->load->helper('file');
-    $thumb = $largura . 'x' . $altura . '_' . $imagem;
-    $thumbinfo = get_file_info('./uploads/thumbs/' . $thumb);
-    if ($thumbinfo != FALSE):
-        $retorno = base_url('uploads/thumbs/' . $thumb);
-    else:
-        $CI->load->library('image_lib');
-        $config['image_library'] = 'gd2';
-        $config['source_image'] = './uploads/' . $imagem;
-        $config['new_image'] = './uploads/thumbs/' . $thumb;
-        $config['maintain_ratio'] = TRUE;
-        $config['width'] = $largura;
-        $config['height'] = $altura;
-        $CI->image_lib->initialize($config);
-        if ($CI->image_lib->resize()):
-            $CI->image_lib->clear();
-            $retorno = base_url('uploads/thumbs/' . $thumb);
-        else:
-            $retorno = FALSE;
-        endif;
-    endif;
-    if ($geratag && $retorno != FALSE)
-        $retorno = '<img src="' . $retorno . '" alt="" />';
-    return $retorno;
-}
 
 //gera um slug basedo no título
 function slug($string = NULL) {
