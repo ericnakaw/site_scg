@@ -144,34 +144,22 @@ function thumb($imagem = NULL, $largura = 100, $altura = 75, $geratag = TRUE) {
     return $retorno;
 }
 
-function enviar_email($para, $assunto, $menssagem, $cc = '', $co = '') {
+function enviar_email($para, $assunto, $mensagem, $cc = '', $co = '') {
     $CI = & get_instance();
     $CI->load->library('email');
-    $config['protocol'] = 'smtp';
-    $config['smtp_host'] = 'ssl://smtp.gmail.com';
-    $config['smtp_port'] = '465';
-    $config['smtp_timeout'] = '7';
-    $config['smtp_user'] = 'email@gmail.com';
-    $config['smtp_pass'] = 'password';
-    $config['charset'] = 'utf-8';
-    $config['newline'] = "\r\n";
-    $config['mailtype'] = 'html'; // text or html
-    $config['validation'] = TRUE; // bool whether to validate email or not      
 
-    $CI->email->initialize($config);
-
-    $CI->email->from('contato@camilagolin.com.br', 'Formulario de Contato');
+    $CI->email->from('news@camilagolin.com.br', 'Contato Site');
     $CI->email->to($para);
-    $CI->email->cc($cc);
-    $CI->email->bcc($co);
-
+    $CI->email->cc('');
+    $CI->email->bcc('');
+    
     $CI->email->subject($assunto);
-    $CI->email->message($menssagem);
-
+    $CI->email->message($mensagem);
+    
     if ($CI->email->send()) {
         return TRUE;
     } else {
-        return TRUE;
+        return FALSE;
     }
 }
 

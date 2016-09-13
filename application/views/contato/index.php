@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-6 col-md-6">
-                <form id="form_contato" action="<?= base_url("ajax/form_contato") ?>" method="POST" role="form">
+                <form id="form_contato" action="<?= base_url("index.php/ajax/form_contato") ?>" method="POST" role="form">
                     <fieldset>
                         <div class="col-xs-12 col-md-12 col-lg-12">
                             <legend>Solicite um orçamento</legend>
@@ -113,11 +113,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 data: $(this).serialize(),
                 success: function (result)
                 {
-
-//                    $('#form_contato')[0].reset();
                     if (!!result) {
-
-                        result = $.parseJSON(result);
                         console.log(result);
                         $('#return_form_success').slideDown();
                     } else {
@@ -127,6 +123,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 },
                 error: function (jqXHR, textStatus, errorMessage) {
                     $('#return_form_error').slideDown();
+                    console.log(errorMessage);
                 }
             });
             event.preventDefault();

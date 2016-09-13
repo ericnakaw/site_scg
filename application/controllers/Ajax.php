@@ -13,20 +13,21 @@ class Ajax extends CI_Controller {
     }
 
     public function form_contato() {
-        $para = "fellipe6900@gmail.com";
+        $para = "ericnakaw@hotmail.com";
         $assunto = "Formulario de Contato do Site";
 
-        $menssagem = "<br>Nome: " . $this->input->post('nome');
-        $menssagem.= "<br>Email: ". $this->input->post('email');
-        $menssagem.= "<br>Telefone: ". $this->input->post('telefone');
-        $menssagem.= "<br>Evento: ". $this->input->post('evento');
-        $menssagem.= "<br>Data do evento: ". $this->input->post('data');
-        $menssagem.= "<br>Menssagem: ". $this->input->post('mensagem');
+        $mensagem = "<hr><br>Nome: " . $this->input->post('nome');
+        $mensagem.= "<br>Email: ". $this->input->post('email');
+        $mensagem.= "<br>Telefone: ". $this->input->post('telefone');
+        $mensagem.= "<br>Evento: ". $this->input->post('evento');
+        $mensagem.= "<br>Data do evento: ". date("d/m/Y", strtotime($this->input->post('data')));
+        $mensagem.= "<br>Menssagem: ". $this->input->post('mensagem');
+        $mensagem.= "<hr>";
 
-        if (enviar_email($para, $assunto, $menssagem)) {
-            print json_encode($this->input->post());
+        if (enviar_email($para, $assunto, $mensagem)) {
+            print "True";
         } else {
-            print '';
+            print "False";
         }
     }
 

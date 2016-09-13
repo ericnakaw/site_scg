@@ -9,22 +9,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?=base_url('home')?>">Studio Camila Golin</a>
+                    <?=anchor('home', 'Studio Camila Golin', array('class'=>"navbar-brand"));?>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?=base_url('home')?>">Home</a></li>
-                        <li><a href="<?=base_url('sobre')?>">Sobre</a></li>
+                        <li class="active"><?=anchor('home', 'Studio Camila Golin');?></li>
+                        <li><?=anchor('sobre', 'Sobre');?></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfólio <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?=base_url('convite')?>">Convites</a></li>
-                                <li><a href="<?=base_url('acessorio')?>">Acessórios</a></li>
-                                <li><a href="<?=base_url('lembranca')?>">Lembranças</a></li>
+                                <li><?=anchor('convite', 'Convites');?></li>
+                                <li><?=anchor('acessorio', 'Acessórios');?></li>
+                                <li><?=anchor('lembranca', 'Lembranças');?></li>
                             </ul>
                         </li>
-                        <li><a href="<?=base_url('contato')?>">Contato</a></li>
-                        <li><a href="<?=base_url('localizacao')?>">Localização</a></li>
+                        <li><?=anchor('contato', 'Contato');?></li>
+                        <li><?=anchor('localizacao', 'Localização');?></li>
                     </ul>
                 </div>
             </div>
