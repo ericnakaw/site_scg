@@ -18,9 +18,6 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfólio <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><?=anchor('convite', 'Convites');?></li>
-                                <li><?=anchor('acessorio', 'Acessórios');?></li>
-                                <li><?=anchor('lembranca', 'Lembranças');?></li>
                                 <li><?=anchor('casamento', 'Casamento');?></li>
                                 <li><?=anchor('debutante', '15 anos');?></li>
                                 <li><?=anchor('infantil', 'Infantil');?></li>

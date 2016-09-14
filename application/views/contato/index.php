@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-xs-12 col-md-6 col-md-6">
                 <div class="w3-card-4">
                     <header class="w3-container">
-                    <h2>Solicite um orçamento</h2>
+                        <h2>Solicite um orçamento</h2>
                     </header>
                     <div class="w3-container">
                         <form id="form_contato" action="<?= base_url("index.php/ajax/form_contato") ?>" method="POST" role="form">
@@ -78,16 +78,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
           <div class="col-xs-12 col-md-6 col-md-6">
             <h3>Loja Tatuapé</h3>
-            Atendimento de Seg a Sex das 09h00 as 17h30<br>
+            Atendimento:<br>
+            Seg a Sex das 09h00 às 17h30<br>
             Sábados das 10h00 às 13h00 com hora marcada.<br>
             Rua Emilio Mallet, 1541 – Tatuapé<br>
-            Tel: (11) 3596-9420/ (11) 2076-1035<br>
+            Tel: (11) 3596-9420 / (11) 2076-1035<br>
             vendas@camilagolin.com.br<br>
             <hr>
             <h3>Loja Jardins</h3>
-            Atendimento Quarta a Sábado somente com hora marcada.<br>
+            Atendimento <b>somente</b> com hora marcada.<br>
+            Ter a Sex  das 11h00 às 18h00 <br>
+            Sábados das 10h00 às 13h00<br>
             Rua Haddock Lobo, 131 sl. 303 – Cerqueira César<br>
-            (Estacionamento cortesia com vallet)<br>
+            (Estacionamento 1ª hora cortesia com vallet)<br>
             Tel: (11) 3596-9430<br>
             vendas2@camilagolin.com.br<br>
             <hr>

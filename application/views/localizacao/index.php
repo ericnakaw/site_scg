@@ -15,10 +15,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-xs-12 col-md-6 col-lg-6">
 				<div class="w3-container w3-card-4">
 					<h3>Loja Tatuapé</h3>
-					Atendimento de Seg a Sex das 09h00 as 17h30<br>
-					Sábados das 10h00 às 13h00 com hora marcada.<br>
+					Atendimento:<br>
+					Seg a Sex das 09h00 às 17h30<br>
+					Sábados das 10h00 às 13h00 com hora marcada.<br><br>
 					Rua Emilio Mallet, 1541 – Tatuapé<br>
-					Tel: (11) 3596-9420/ (11) 2076-1035<br>
+					Tel: (11) 3596-9420 / (11) 2076-1035<br>
 					vendas@camilagolin.com.br<br>
 					<hr>
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.6492068448847!2d-46.561079685022534!3d-23.54511618469099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5e8bef70bb61%3A0x324e533ca5e6327e!2sStudio+Camila+Golin!5e0!3m2!1spt-BR!2sbr!4v1473405244532" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -27,9 +28,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-xs-12 col-md-6 col-lg-6">
 				<div class="w3-container w3-card-4">
 					<h3>Loja Jardins</h3>
-					Atendimento Quarta a Sábado somente com hora marcada.<br>
+					Atendimento <b>somente</b> com hora marcada.<br>
+					Ter a Sex  das 11h00 às 18h00 <br>
+					Sábados das 10h00 às 13h00<br>
 					Rua Haddock Lobo, 131 sl. 303 – Cerqueira César<br>
-					(Estacionamento cortesia com vallet)<br>
+					(Estacionamento 1ª hora cortesia com vallet)<br>
 					Tel: (11) 3596-9430<br>
 					vendas2@camilagolin.com.br<br>
 					<hr>
