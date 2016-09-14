@@ -14,7 +14,7 @@ class Contato extends CI_Controller {
         set_layout('titulo', 'Contato', FALSE);
         set_layout('conteudo', load_conteudo('contato/index'));
         set_layout('template', 'default');
-        carregar_layout();
+        load_layout();
     }
 
     public function email5(){

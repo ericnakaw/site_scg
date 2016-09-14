@@ -1,13 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<br>
-<br>
-<br>
 <!-- Page Content -->
 <div class="container">
-
-	<div>
+	<div class="margin-body-top">
 		<!-- Page Header -->
 		<div class="row">
 			<div class="col-lg-12">

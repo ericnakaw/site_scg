@@ -16,7 +16,7 @@ function init_layout() {
     set_layout('footer', load_content('template/footer/footer'));
     set_layout('conteudo', "Não foi carregado nenhum conteudo na variavel Sistema->layout['conteudo']");
     //CSS
-    set_layout('header', load_css(array('bootstrap.min', 'carousel', 'landing-page', 'googleapis')), FALSE);
+    set_layout('header', load_css(array('w3css','w3-theme-brown','main','bootstrap.min', 'carousel', 'googleapis')), FALSE);
     //set_layout('header', load_css(array('bootstrap-image-gallery'), 'assets/css/bootstrap-image-gallery'), FALSE);
     //JS
     set_layout('header', load_js(array('jquery.min', 'bootstrap.min', 'ie10-viewport-bug-workaround', 'holder.min')), FALSE);
@@ -67,7 +67,7 @@ function load_conteudo($view, $dados = NULL) {
 }
 
 // Carregar o layout definido na variavel Sistema->layout
-function carregar_layout() {
+function load_layout() {
     $CI = & get_instance();
     $CI->load->library('sistema');
     $CI->parser->parse('template/' . $CI->sistema->layout['template'], get_layout());

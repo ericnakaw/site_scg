@@ -13,7 +13,7 @@ class Ajax extends CI_Controller {
     }
 
     public function form_contato() {
-        $para = "ericnakaw@hotmail.com";
+        $para = "news@camilagolin.com.br";
         $assunto = "Formulario de Contato do Site";
 
         $mensagem = "<hr><br>Nome: " . $this->input->post('nome');

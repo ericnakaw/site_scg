@@ -1,193 +1,134 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-    <div class="container topnav">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand topnav" href="#">Studio Camila Golin</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#about">Sobre</a>
-                </li>
-                <li>
-                    <a href="#services">Serviços</a>
-                </li>
-                <li>
-                    <a href="#contact">Contato</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
+<div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
 
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
 
-<!-- Header -->
-<a name="about"></a>
-<div class="intro-header">
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="intro-message">
-                    <h1>Studio Camila Golin</h1>
-                    <h3>Convites, Lembrancinhas e Acessórios</h3>
-                    <hr class="intro-divider">
-                    <ul class="list-inline intro-social-buttons">
-                        <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Facebook</span></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Instagram</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+      <div class="item active">
+      <img src="img_chania.jpg" alt="Chania">
+        <div class="carousel-caption">
+          <h3>Chania</h3>
+          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
         </div>
+      </div>
+
+      <div class="item">
+        <img src="img_chania2.jpg" alt="Chania" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Chania</h3>
+          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="img_flower.jpg" alt="Flower" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Flowers</h3>
+          <p>Beatiful flowers in Kolymbari, Crete.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="img_flower2.jpg" alt="Flower" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Flowers</h3>
+          <p>Beatiful flowers in Kolymbari, Crete.</p>
+        </div>
+      </div>
 
     </div>
-    <!-- /.container -->
 
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
-<!-- /.intro-header -->
 
-<!-- Page Content -->
 
-<a  name="services"></a>
-<div class="content-section-a">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 col-sm-6">
-                <hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-                <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
-            </div>
-            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-            <img class="img-responsive" src="<?=base_url('assets/img/landing1.jpg')?>" alt="">
-            </div>
-        </div>
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
 
+    <div class="container marketing">
+    	<!-- INICIO : PRODUTOS -->
+    	<div class="row">
+    		<div class="col-lg-4">
+    			<img class="img-rounded" src="<?=base_url('assets/img/circulo1.jpg')?>" alt="Generic placeholder image" width="300" height="300"/>
+    			<h2>Especiais</h2>
+    			<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+    			<p><a class="btn btn-default" href="#" role="button">Veja mais &raquo;</a></p>
+    		</div><!-- /.col-lg-4 -->
+    		<div class="col-lg-4">
+    			<img class="img-rounded" src="<?=base_url('assets/img/circulo2.jpg')?>" alt="Generic placeholder image" width="300" height="300"/>
+    			<h2>Mimos</h2>
+    			<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+    			<p><a class="btn btn-default" href="#" role="button">Veja mais &raquo;</a></p>
+    		</div><!-- /.col-lg-4 -->
+    		<div class="col-lg-4">
+    			<img class="img-rounded" src="<?=base_url('assets/img/circulo3.jpg')?>" alt="Generic placeholder image" width="300" height="300"/>
+    			<h2>Divertidos</h2>
+    			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+    			<p><a class="btn btn-default" href="#" role="button">Veja mais &raquo;</a></p>
+    		</div><!-- /.col-lg-4 -->
+    	</div><!-- FIM : PRODUTOS -->
+
+
+    	<!-- INICIO: FEATURETTES-->
+      <hr class="featurette-divider"/>
+      <div class="row">
+        <div class="featurette">
+          <div class="col-md-7">
+           <h2 class="featurette-heading">Sinceros votos de <span class="text-muted">felicidades</span></h2>
+           <p class="lead">Que a felicidade a dois continue sendo o objetivo principal de suas vidas. Que a caminhada seja longa, repleta de amor e compreensão.</p>
+         </div>
+         <div class="col-md-5">
+           <img src="<?=base_url('assets/img/retangule1.jpg')?>" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"/>
+         </div>
+       </div>
+     </div>
+     <hr class="featurette-divider"/>
+     <div class="row">
+       <div class="featurette">
+        <div class="col-md-7 col-md-push-5">
+         <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+         <p class="lead">Um casamento feliz se constrói com muito amor, carinho e compreensão. Que estes sentimentos estejam sempre presentes na vida de vocês!</p>
+       </div>
+       <div class="col-md-5 col-md-pull-7">
+         <img src="<?=base_url('assets/img/retangule2.jpg')?>" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"/>
+       </div>
+     </div>
+   </div>
+   <hr class="featurette-divider"/>
+   <div class="row">
+     <div class="featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <img  src="<?=base_url('assets/img/retangule3.jpg')?>" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"/>
+      </div>
     </div>
-    <!-- /.container -->
-
+  </div>
+  <hr class="featurette-divider">
+  <!-- FIM : FEATURETTES -->
 </div>
-<!-- /.content-section-a -->
-
-<div class="content-section-b">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                <hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
-            </div>
-            <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                <img class="img-responsive" src="<?=base_url('assets/img/landing2.jpg')?>" alt="">
-            </div>
-        </div>
-
-    </div>
-    <!-- /.container -->
-
-</div>
-<!-- /.content-section-b -->
-
-<div class="content-section-a">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-5 col-sm-6">
-                <hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
-            </div>
-            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                <img class="img-responsive" src="<?=base_url('assets/img/landing3.jpg')?>" alt="">
-            </div>
-        </div>
-
-    </div>
-    <!-- /.container -->
-
-</div>
-<!-- /.content-section-a -->
-
-<a  name="contact"></a>
-<div class="banner">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-6">
-                <h2>Estamos bem próximos:</h2>
-            </div>
-            <div class="col-lg-6">
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Facebook</span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Instagram</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-    <!-- /.container -->
-
-</div>
-<!-- /.banner -->
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <ul class="list-inline">
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li class="footer-menu-divider">&sdot;</li>
-                    <li>
-                        <a href="#about">Sobre</a>
-                    </li>
-                    <li class="footer-menu-divider">&sdot;</li>
-                    <li>
-                        <a href="#services">Serviços</a>
-                    </li>
-                    <li class="footer-menu-divider">&sdot;</li>
-                    <li>
-                        <a href="#contact">Contato</a>
-                    </li>
-                </ul>
-                <p class="copyright text-muted small">Copyright &copy; Studio Camila Golin 2016. Todos os direitos reservados</p>
-            </div>
-        </div>
-    </div>
-</footer>
+    <!-- FIM : CONTAINER -->

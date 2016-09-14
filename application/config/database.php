@@ -75,14 +75,14 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql2.porta80.com.br',
+	'hostname' => 'mysql4.porta80.com.br',
 	'username' => 'camilagolin',
 	'password' => 'mila00',
 	'database' => 'camilagolin',
 	/*'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-	'database' => 'studio_cg',*/
+	'database' => 'site_cg',*/
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

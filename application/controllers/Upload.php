@@ -13,14 +13,14 @@ class Upload extends CI_Controller {
 		set_layout('titulo', 'Upload', FALSE);
 		set_layout('conteudo', load_conteudo('upload/upload_form'),array('error' => '' ));
 		set_layout('template', 'default');
-		carregar_layout();
+		load_layout();
 	}
 	public function do_upload(){
-		$config['upload_path']          = 'assets/img/uploads/';
-		$config['allowed_types']        = 'gif|jpg|png';
-		//$config['max_size']             = 2048;
-		//$config['max_width']            = 1024;
-		//$config['max_height']           = 768;
+		$config['upload_path'] = 'assets/img/uploads/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size'] = 2048;
+		$config['max_width'] = 1024;
+		$config['max_height'] = 768;
 		//chmod($config['upload_path'], 777); ## this should change the permissions
 		$this->load->library('upload', $config);
 
@@ -30,7 +30,7 @@ class Upload extends CI_Controller {
 			set_layout('titulo', 'Do Upload', FALSE);
 			set_layout('conteudo', load_conteudo('upload/upload_form'),$error);
 			set_layout('template', 'default');
-			carregar_layout();
+			load_layout();
 		}
 		else
 		{
@@ -38,7 +38,7 @@ class Upload extends CI_Controller {
 			set_layout('titulo', 'Convite', FALSE);
 			set_layout('conteudo', load_conteudo('upload/upload_success'),$data);
 			set_layout('template', 'default');
-			carregar_layout();
+			load_layout();
 		}
 	}
 

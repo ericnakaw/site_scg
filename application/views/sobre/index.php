@@ -1,12 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<br>
-<br>
-<br>
 <!-- Page Content -->
 <div class="container">
-	<div>
+	<div class="margin-body-top">
 		<!-- Page Header -->
 		<div class="row">
 			<div class="col-lg-12">
@@ -15,20 +12,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-12 col-md-4 col-lg-4 w3-padding" >
-			<img class="img-responsive" src="<?=base_url('assets/img/camila_golin.jpg')?>" alt="foto da loja">
-			</div>
-			<div class="col-xs-12 col-md-8 col-lg-8 w3-padding">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<div class="col-xs-12 col-md-12 col-lg-12">
+				<img style="display:block;margin:auto;;" class="img-responsive" src="<?=base_url('assets/img/sobre/logo.jpg')?>" alt="logo da loja">
+				<div class="text-center sobre">
+					<div>
+						<p>Desde 2006 no mercado, motivadas e inspiradas pela arte e o design, temos a proposta de criar, desenvolver e apresentar produtos finos e exclusivos.</p>
+						<p>Com duas lojas em São Paulo, o Studio Camila Golin está consolidado no mercado devido à qualidade de seus produtos.</p>
+						<p>Trabalhamos com relevo americano, seco, silk, impressão digital e metalic, procurando sempre aliar o melhor processo a sua necessidade.</p>
+						<p>São infinitas imagens, cores, texturas, letras, formas e acabamentos, para transformar as suas, e as nossas idéias, em uma poesia visual.</p>
+						<p>Uma experiência que aguça os sentidos, capta a energia e a alma do seu cotidiano, do seu evento....</p>
+						<p>Vamos dar vida à essas memórias... Acredite... é possível. Nossa motivação é transformar o seu sonho em realidade...</p>
+						<br>
+						<p class="frase-pensamento">"Algumas pessoas chamam isso dedicação, Nós preferimos chamar de PAIXÃO".</p>
+					</div>
+				</div>
 			</div>
 		</div>
-		
+
 		<hr>
 	</div>
 
 </div>
-<br>
-<br>
-<br>
-<br>
+</div>

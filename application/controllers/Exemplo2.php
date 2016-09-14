@@ -13,7 +13,7 @@ class Exemplo2 extends CI_Controller {
         set_layout('titulo', 'Meu Titulo', FALSE);
         set_layout('conteudo', load_conteudo('home/index2'));
         set_layout('template', 'default');
-        carregar_layout();
+        load_layout();
     }
 
 }

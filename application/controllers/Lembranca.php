@@ -11,7 +11,7 @@ class Lembranca extends CI_Controller {
 		set_layout('titulo', 'Lembranças', FALSE);
         set_layout('conteudo', load_conteudo('lembranca/index'));
         set_layout('template', 'default');
-        carregar_layout();
+        load_layout();
 	}
 
 }

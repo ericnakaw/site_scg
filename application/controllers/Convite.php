@@ -11,19 +11,19 @@ class Convite extends CI_Controller {
 		set_layout('titulo', 'Convite', FALSE);
         set_layout('conteudo', load_conteudo('convite/index'));
         set_layout('template', 'default');
-        carregar_layout();
+        load_layout();
 	}
 	public function casamento(){
 		set_layout('titulo', 'Convite', FALSE);
         set_layout('conteudo', load_conteudo('convite/casamento'));
         set_layout('template', 'default');
-        carregar_layout();
+        load_layout();
 	}
 	public function galeria(){
 		set_layout('titulo', 'Convite', FALSE);
         set_layout('conteudo', load_conteudo('convite/galeria'));
         set_layout('template', 'default');
-        carregar_layout();
+        load_layout();
 	}
 
 }

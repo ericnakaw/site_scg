@@ -9,10 +9,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<link rel="icon" href="<?= base_url('assets/img/ico/scg2.ico') ?>" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?= base_url('assets/img/ico/scg2.ico') ?>" type="image/x-icon" />
 	{header}
 </head>
-<body>
+<body">
 	{menu}
 	{conteudo}
 	{footer}        
