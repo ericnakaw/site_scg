@@ -22,11 +22,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<?php foreach ($dados['crud'] as $convite) {
 						?>
 						<div class="col-sm-6 col-md-4">
-							<div class="thumbnail">
+							<div class="w3-container w3-card-2 w3-padding w3-margin-bottom w3-margin-top">
 								<a href="<?=base_url($convite->local)?>" title="<?=$convite->titulo?>" data-gallery>
-									<img src="<?=base_url($convite->local)?>" alt="<?=$convite->titulo?>">
+									<img class="cover" style="width: 100%;height: 250px;" src="<?=base_url($convite->local)?>" alt="<?=$convite->titulo?>">
 								</a>
-								<div class="caption">
+								<div class="">
 									<h3><?=$convite->titulo?></h3>
 									<p><?=$convite->descricao?></p>
 								</div>

@@ -15,3 +15,6 @@
 .frase-pensamento{
 	text-align: center;
 }
+.cover{
+	object-fit: cover;
+}

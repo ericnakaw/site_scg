@@ -42,6 +42,7 @@ if ($dados['acao'] == 'inserir') {
             <h3 class="panel-title"><?= $dados['titulo_painel']?></h3>
         </div>
         <div class="panel-body">
+        <?php $this->load->view('__include/mensagem_crud'); ?>
             <form method="post" action="<?=base_url($action)?>" class="form-horizontal" role="form" enctype="multipart/form-data" />
 
                 <!--ID-->

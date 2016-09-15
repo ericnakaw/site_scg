@@ -39,6 +39,8 @@ class Crud extends CI_Controller {
         $upload = $this->do_upload($this->input->post('portifolio'),$this->input->post('item'));
         if(!empty($upload['error'])){
             $this->session->set_flashdata('erro', $upload['error']);
+            var_dump($upload['error']);
+            //die();
             redirect(base_url('crud/form'), 'location');
         }
 
@@ -118,7 +120,7 @@ public function deletar() {
 public function do_upload($portifolio,$item){
     $config['upload_path'] = 'assets/img/uploads/'.$portifolio.'/'.$item.'/';
     $config['allowed_types'] = 'gif|jpg|png';
-    $config['max_size'] = 20048;
+    $config['max_size'] = 10000;
     //$config['max_width'] = 1024;
     //$config['max_height'] = 768;
     $this->load->library('upload', $config);
