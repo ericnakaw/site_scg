@@ -21,15 +21,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <table class="table display compact table-bordered " cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <td>ID</td>
-                                <td>LOCAL</td>
+                                <td class="hidden">Id</td>
+                                <td>Titulo</td>
+                                <td>Descricao</td>
+                                <td>Portifolio</td>
+                                <td>Item</td>
+                                <td>Local</td>
                             </tr>
                         </thead>
                         <tbody id="fbody">
                             <?php foreach ($dados['crud'] as $crud) {
                                 ?> 
                                 <tr>
-                                    <td><?=$crud->id?></td>
+                                    <td class="hidden"><?=$crud->id?></td>
+                                    <td><?=$crud->titulo?></td>
+                                    <td><?=$crud->descricao?></td>
+                                    <td><?=$crud->portifolio?></td>
+                                    <td><?=$crud->item?></td>
                                     <td><?=$crud->local?></td>
                                 </tr>
                                 <?php

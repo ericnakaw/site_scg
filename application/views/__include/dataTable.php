@@ -1,6 +1,8 @@
 <?php
 //direcionamento para edição e exclusão, etc vindo do controller 
-empty($dados['controller']) ? $controller = '' : $controller = $dados['controller']; 
+//?empty($dados['controller']) ? $controller = '' : $controller = $dados['controller']; 
+
+$controller = $this->router->class;
 ?>
 <link rel="stylesheet" href="<?= base_url("assets/css/dataTables.bootstrap.min.css"); ?>" />
 <script type="text/javascript" src="<?= base_url("assets/js/jquery.dataTables.js"); ?>"></script>

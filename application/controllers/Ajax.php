@@ -31,4 +31,24 @@ class Ajax extends CI_Controller {
         }
     }
 
+    public function get_imagens() {
+        $this->load->helper('file');
+        $data = get_filenames('assets/img/portifolio/casamento/',true);
+
+        foreach ($data as $key => $value) {
+            
+            $data2 = str_replace('C:\xampp\htdocs\site_scg', base_url(), $value);
+            $card["title"] = "Teste";
+            $card["img"] = str_replace('\\', '/', $data2);
+            $card["text"] = "meu texto";
+            $view_data[] = $card;
+
+        }
+
+
+        print json_encode($view_data);
+        //set_layout('conteudo', load_conteudo('home/file',$view_data));
+        //load_layout();
+    }
+
 }

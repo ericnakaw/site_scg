@@ -5,6 +5,7 @@ class Casamento extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('Crud_m');
 		init_layout();
 	}
 	public function index(){
@@ -13,9 +14,16 @@ class Casamento extends CI_Controller {
         set_layout('template', 'default');
         load_layout();
 	}
-	public function casamento(){
+	public function convite(){
 		set_layout('titulo', 'Convite', FALSE);
-        set_layout('conteudo', load_conteudo('casamento/convite'));
+		//teste
+
+		$data['crud'] = $this->Crud_m->get_by_portifolio_item('casamento','convite');
+		//var_dump($data['crud']);
+		//die();
+
+		//teste
+        set_layout('conteudo', load_content('casamento/convite',$data));
         set_layout('template', 'default');
         load_layout();
 	}

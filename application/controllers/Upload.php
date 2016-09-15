@@ -24,6 +24,7 @@ class Upload extends CI_Controller {
 		//chmod($config['upload_path'], 777); ## this should change the permissions
 		$this->load->library('upload', $config);
 
+
 		if ( ! $this->upload->do_upload('userfile'))
 		{
 			$error = array('error' => $this->upload->display_errors());
@@ -34,6 +35,8 @@ class Upload extends CI_Controller {
 		}
 		else
 		{
+			print $this->upload->data('full_path');
+			die();
 			$data = array('upload_data' => $this->upload->data());
 			set_layout('titulo', 'Convite', FALSE);
 			set_layout('conteudo', load_conteudo('upload/upload_success'),$data);

@@ -15,12 +15,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!-- Projects Row -->
 		<div class="row">
 			<div class="col-md-4 portfolio-item">
-				<a href="<?=base_url('convite/casamento')?>">
+				<a href="<?=base_url('casamento/convite')?>">
 					<!-- 700x400 -->
 					<img class="img-responsive" src="<?=base_url('assets/img/carousel6_700x400.jpg')?>" alt="">
 				</a>
 				<h3>
-					<a href="<?=base_url('convite/casamento')?>">Convites</a>
+					<a href="<?=base_url('casamento/convite')?>">Convite</a>
 				</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
 			</div>
