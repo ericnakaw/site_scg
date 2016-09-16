@@ -18,3 +18,9 @@
 .cover{
 	object-fit: cover;
 }
+
+/*portifolio*/
+.portifolio_img{
+	width: 100%;
+	height: 250px;
+}

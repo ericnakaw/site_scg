@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Crud_m extends CI_Model {
+class Portifolio_m extends CI_Model {
 
     var $id;
     var $local;
@@ -20,27 +20,45 @@ class Crud_m extends CI_Model {
         if (!empty($id)) {
             $this->db->where('id', $id);
             $this->db->limit(1);
-            $result = $this->db->get('crud');
-            $result = $this->Crud_m->_changeToObject($result->result_array());
+            $result = $this->db->get('portifolio');
+            $result = $this->Portifolio_m->_changeToObject($result->result_array());
             return $result[0];
         } else {
             return null;
         }
     }
 
-    public function get_by_portifolio_item($portifolio,$item){
+    public function get_num_rows($portifolio,$item){
         $this->db->where(array('portifolio'=>$portifolio,'item'=>$item));
         $this->db->order_by("id", "desc");
-        $result = $this->db->get('crud');
-        return $this->Crud_m->_changeToObject($result->result_array());
+        $result = $this->db->get('portifolio');
+        return $result->num_rows();
+    }
+
+    //faz select somente com parametros do portifolio e item com limites
+    public function get_by_portifolio_item($portifolio,$item,$start,$limit){
+        $this->db->limit($start,$limit);
+        $this->db->where(array('portifolio'=>$portifolio,'item'=>$item));
+        $this->db->order_by("id", "desc");
+        $result = $this->db->get('portifolio');
+        $portifolio = array(
+            'portifolio' => $this->Portifolio_m->_changeToObject($result->result_array()),
+            'num_rows' => $result->num_rows()
+            );
+        /*print '<pre>';
+        var_dump($this->db->last_query());
+        print '</pre>';
+        die();*/
+        return $portifolio;
+        //return $this->Portifolio_m->_changeToObject($result->result_array());
     }
 
     public function get_object_list() {
-        $result = $this->db->get('crud');
-        return $this->Crud_m->_changeToObject($result->result_array());
+        $result = $this->db->get('portifolio');
+        return $this->Portifolio_m->_changeToObject($result->result_array());
     }
 
-    public function inserir(Crud_m $objeto) {
+    public function inserir(Portifolio_m $objeto) {
         if (!empty($objeto)) {
             $dados = array(
                 'id' => $objeto->id,
@@ -51,14 +69,14 @@ class Crud_m extends CI_Model {
                 'item'=> $objeto->item,
                 'alt'=> $objeto->alt,
                 );
-            if ($this->db->insert('crud', $dados)) {
+            if ($this->db->insert('portifolio', $dados)) {
                 return $this->db->insert_id();
             }
         }
         return false;
     }
 
-    public function editar(Crud_m $objeto) {
+    public function editar(Portifolio_m $objeto) {
         if (!empty($objeto->id)) {
             $dados = array(
                 'id' => $objeto->id,
@@ -70,7 +88,7 @@ class Crud_m extends CI_Model {
                 'alt'=> $objeto->alt,
                 );
             $this->db->where('id', $objeto->id);
-            if ($this->db->update('crud', $dados)) {
+            if ($this->db->update('portifolio', $dados)) {
                 return true;
             }
         } 
@@ -81,7 +99,7 @@ class Crud_m extends CI_Model {
     public function deletar($id) {
         if (!empty($id)) {
             $this->db->where('id', $id);
-            if ($this->db->delete('crud')) {
+            if ($this->db->delete('portifolio')) {
                 return true;
             } 
         } 
@@ -91,7 +109,7 @@ class Crud_m extends CI_Model {
     function _changeToObject($result_db = '') {
         $object_lista = array();
         foreach ($result_db as $key => $value) {
-            $object = new Crud_m();
+            $object = new Portifolio_m();
             $object->id = $value['id'];
             $object->local = $value['local'];
             $object->titulo = $value['titulo'];

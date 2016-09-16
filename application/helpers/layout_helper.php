@@ -18,7 +18,7 @@ function init_layout() {
     //CSS
     set_layout('header', load_css(array('blueimp-gallery.min','bootstrap-image-gallery','w3css','w3-theme-brown','main','bootstrap.min', 'carousel', 'googleapis')), FALSE);
     //JS
-    set_layout('header', load_js(array('jquery.min','blueimp-gallery.min', 'bootstrap.min', 'ie10-viewport-bug-workaround', 'holder.min')), FALSE);
+    set_layout('header', load_js(array('jquery.min','blueimp-gallery.min', 'bootstrap.min', 'ie10-viewport-bug-workaround', 'holder.min','bootpag.min')), FALSE);
 }
 
 // Definir prodiedades do layout

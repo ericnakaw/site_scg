@@ -2,21 +2,21 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Crud extends CI_Controller {
+class Portifolio extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Crud_m');
+        $this->load->model('Portifolio_m');
         $this->load->helper(array('form', 'url'));
         $this->load->helper("file");
         init_layout();
-        set_layout('titulo', 'Crud', FALSE);
+        set_layout('titulo', 'Portifolio', FALSE);
     }
 
     public function index() {
-        $data['titulo_painel'] = 'Crud';
-        $data['crud'] = $this->Crud_m->get_object_list();
-        set_layout('conteudo', load_content('crud/lista', $data));
+        $data['titulo_painel'] = 'Portifolio';
+        $data['portifolio'] = $this->Portifolio_m->get_object_list();
+        set_layout('conteudo', load_content('portifolio/index', $data));
         load_layout();
     }
 
@@ -24,14 +24,14 @@ class Crud extends CI_Controller {
         $id = $this->uri->segment(3);
         if (empty($id)) {
             $data['acao'] = 'inserir';
-            $data['titulo_painel'] = 'Inserir Crud';
+            $data['titulo_painel'] = 'Inserir Portifolio';
         } else {
-            $objeto = $this->Crud_m->get_object($id);
-            $data['crud'] = $objeto;
+            $objeto = $this->Portifolio_m->get_object($id);
+            $data['portifolio'] = $objeto;
             $data['acao'] = 'editar';
-            $data['titulo_painel'] = 'Editar Crud';
+            $data['titulo_painel'] = 'Editar Portifolio';
         }
-        set_layout('conteudo', load_content('crud/form', $data));
+        set_layout('conteudo', load_content('portifolio/form', $data));
         load_layout();
     }
 
@@ -41,15 +41,15 @@ class Crud extends CI_Controller {
         //Se ocorrer um erro, $upload['error'] virá com uma string
         if(!empty($upload['error'])){
             $this->session->set_flashdata('erro', $upload['error']);
-            redirect(base_url('crud/form'), 'location');
+            redirect(base_url('portifolio/form'), 'location');
         }
         //Troco as barras do endereço do servidor com barras invertidas. Ex: C:\xampp\web
-        $server_path = str_replace('\\','/',getcwd());
+        $server_path = str_ireplace('\\','/',getcwd());
         //Retiro o endereço do servidor para armazenar somente minha estrutura de pastas
-        $path = str_replace($server_path,'',$upload['upload_data']['file_path'].$_FILES['local']['name']);
+        $path = str_ireplace($server_path,'',$upload['upload_data']['file_path'].$_FILES['local']['name']);
 
 
-        $objeto = new Crud_m();
+        $objeto = new Portifolio_m();
         $objeto->id = null;
         $objeto->local = $path; //variável somente com minha estrutura de pasta
         $objeto->titulo = $this->input->post('titulo');
@@ -58,7 +58,7 @@ class Crud extends CI_Controller {
         $objeto->item = $this->input->post('item');
         $objeto->alt = $this->input->post('alt');
         
-        $id = $this->Crud_m->inserir($objeto);
+        $id = $this->Portifolio_m->inserir($objeto);
 
         //Se ocorer um erro no bd, retiro o arquivo inserido na pasta
         if (empty($id)) {
@@ -68,11 +68,11 @@ class Crud extends CI_Controller {
         else{
          $this->session->set_flashdata('sucesso', '<b>Registro</b> e <b>Arquivo</b> foram inseridos com sucesso');
      }
-     redirect(base_url('crud'), 'location');
+     redirect(base_url('portifolio'), 'location');
  }
 
  public function editar() {
-    $objeto = $this->Crud_m->get_object($this->input->post('id'));
+    $objeto = $this->Portifolio_m->get_object($this->input->post('id'));
     $objeto->id = $this->input->post('id');
     $objeto->titulo = $this->input->post('titulo');
     $objeto->descricao = $this->input->post('descricao');
@@ -87,35 +87,35 @@ class Crud extends CI_Controller {
         //Se não fizer upload, retorna para a página com erro
         if(!empty($upload['error'])){ 
             $this->session->set_flashdata('erro', $upload['error']);
-            redirect(base_url('crud'), 'location');
+            redirect(base_url('portifolio'), 'location');
         }
         //Excluir o arquivo da pasta
-        $server_path = str_replace('\\','/',getcwd());
+        $server_path = str_ireplace('\\','/',getcwd());
         unlink($server_path.$objeto->local);//DELETA O ARQUIVO DA PASTA
         //Troco as barras do endereço do servidor com barras invertidas. Ex: C:\xampp\web
-        $server_path = str_replace('\\','/',getcwd());
+        $server_path = str_ireplace('\\','/',getcwd());
         //Retiro o endereço do servidor para armazenar somente minha estrutura de pastas
-        $path = str_replace($server_path,'',$upload['upload_data']['full_path']);
+        $path = str_ireplace($server_path,'',$upload['upload_data']['full_path']);
         $objeto->local = $path; //variável somente com minha estrutura de pasta
     }
 
     //Se ocorrer um erro no db, retiro o arquivo inserido da pasta
-    if (empty($this->Crud_m->editar($objeto))) {
+    if (empty($this->Portifolio_m->editar($objeto))) {
         unlink($objeto->local);
         $this->session->set_flashdata('erro', '<p>Não foi possível editar este registro</p>');
     }
     else{
        $this->session->set_flashdata('sucesso', '<b>Registro</b> e <b>Arquivo</b> foram editados com sucesso');
    }
-   redirect(base_url('crud'), 'location');
+   redirect(base_url('portifolio'), 'location');
 }
 
 public function deletar() {
     $id = $this->uri->segment(3);
-    $objeto = $this->Crud_m->get_object($id);
-    $server_path = str_replace('\\','/',getcwd());
+    $objeto = $this->Portifolio_m->get_object($id);
+    $server_path = str_ireplace('\\','/',getcwd());
     //SE DELETAR O ARQUIVO DA PASTA, EXCLUO O REGISTRO NA TABELA
-    if ($this->Crud_m->deletar($id)) {
+    if ($this->Portifolio_m->deletar($id)) {
         $this->session->set_flashdata('sucesso', '<b>Registro</b> excuido com sucesso');
         //Excluo o arquivo da pasta
         if(unlink($server_path.$objeto->local)){
@@ -124,7 +124,7 @@ public function deletar() {
     }else{
         $this->session->set_flashdata('erro', '<p>O registro não foi excuido!</p>');
     }
-    redirect(base_url('crud'), 'location');
+    redirect(base_url('portifolio'), 'location');
 }
 //Upload de arquivos
 public function do_upload($portifolio,$item){

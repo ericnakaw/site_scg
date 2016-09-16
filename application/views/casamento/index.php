@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h3>
 					<a href="<?=base_url('casamento/convite')?>">Convite</a>
 				</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+				<p>Em construção.</p>
 			</div>
 			<div class="col-md-4 portfolio-item">
 				<a href="#">
@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h3>
 					<a href="#">Lembrança</a>
 				</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+				<p>Em construção.</p>
 			</div>
 			<div class="col-md-4 portfolio-item">
 				<a href="#">
@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h3>
 					<a href="#">Acessórios</a>
 				</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+				<p>Em construção.</p>
 			</div>
 		</div>
 		<!-- /.Projects Row -->

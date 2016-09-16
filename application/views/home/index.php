@@ -84,19 +84,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="row">
         <div class="col-lg-4">
          <img class="img-rounded" src="<?=base_url('assets/img/circulo1.jpg')?>" alt="Generic placeholder image" width="300" height="300"/>
-         <h2>Especiais</h2>
+         <h2>Inspirações</h2>
          <p></p>
          <p><a class="btn btn-default" href="#" role="button">Veja mais &raquo;</a></p>
        </div><!-- /.col-lg-4 -->
        <div class="col-lg-4">
          <img class="img-rounded" src="<?=base_url('assets/img/circulo2.jpg')?>" alt="Generic placeholder image" width="300" height="300"/>
-         <h2>Mimos</h2>
+         <h2>Na mídia</h2>
          <p></p>
          <p><a class="btn btn-default" href="#" role="button">Veja mais &raquo;</a></p>
        </div><!-- /.col-lg-4 -->
        <div class="col-lg-4">
          <img class="img-rounded" src="<?=base_url('assets/img/circulo3.jpg')?>" alt="Generic placeholder image" width="300" height="300"/>
-         <h2>Divertidos</h2>
+         <h2>Como comprar</h2>
          <p></p>
          <p><a class="btn btn-default" href="#" role="button">Veja mais &raquo;</a></p>
        </div><!-- /.col-lg-4 -->
@@ -112,11 +112,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="row">
       <div class="featurette">
         <div class="col-md-7">
-         <h2 class="featurette-heading">Sinceros votos de <span class="text-muted">felicidades</span></h2>
-         <p class="lead">Que a felicidade a dois continue sendo o objetivo principal de suas vidas. Que a caminhada seja longa, repleta de amor e compreensão.</p>
+         <h2 class="featurette-heading">Parceiros <span class="text-muted"></span></h2>
+         <p class="lead">Algumas pessoas se tornam especiais porque estão conosco no dia a dia, nos ajudam a suportam a rotina e dão aqueles conselhos certeiros. Essa pessoa é o seu parceiro, e é ótimo valorizar esse laço com as pessoas!</p>
        </div>
        <div class="col-md-5">
-         <img src="<?=base_url('assets/img/retangule1.jpg')?>" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"/>
+         <img src="<?=base_url('assets/img/home/featurettes/parceiros.jpg')?>" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"/>
        </div>
      </div>
    </div>
@@ -124,7 +124,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    <div class="row">
      <div class="featurette">
       <div class="col-md-7 col-md-push-5">
-       <h2 class="featurette-heading">Um casamento feliz<span class="text-muted"></span></h2>
+       <h2 class="featurette-heading">Destaques<span class="text-muted"></span></h2>
        <p class="lead"> se constrói com muito amor, carinho e compreensão. Que estes sentimentos estejam sempre presentes na vida de vocês!</p>
      </div>
      <div class="col-md-5 col-md-pull-7">

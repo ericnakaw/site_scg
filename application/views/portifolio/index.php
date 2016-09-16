@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php $this->load->view('__include/mensagem_crud'); ?>
             <div class="row">
                 <div class="col-md-12">
-                    <a class="btn btn-success" href="<?= base_url('crud/form') ?>"><span class="glyphicon glyphicon-plus"></span></a>
+                    <a class="btn btn-success" href="<?= base_url('portifolio/form') ?>"><span class="glyphicon glyphicon-plus"></span></a>
                     <a id="editar" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
                     <a id="deletar" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span></a>
                 </div>
@@ -32,24 +32,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </tr>
                         </thead>
                         <tbody id="fbody">
-                            <?php foreach ($dados['crud'] as $key => $crud) {
+                            <?php foreach ($dados['portifolio'] as $key => $portifolio) {
                                 ?> 
                                 <tr>
-                                    <td class="hidden"><?=$crud->id?></td>
+                                    <td class="hidden"><?=$portifolio->id?></td>
                                     <td><?=$key + 1?></td>
-                                    <td><?=$crud->titulo?></td>
-                                    <td><?=$crud->descricao?></td>
-                                    <td><?=$crud->portifolio?></td>
-                                    <td><?=$crud->item?></td>
-                                    <td><?=$crud->alt?></td>
-                                    <td><?=$crud->local?></td>
+                                    <td><?=$portifolio->titulo?></td>
+                                    <td><?=$portifolio->descricao?></td>
+                                    <td><?=$portifolio->portifolio?></td>
+                                    <td><?=$portifolio->item?></td>
+                                    <td><?=$portifolio->alt?></td>
+                                    <td><?=$portifolio->local?></td>
                                 </tr>
                                 <?php
                             }?>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="6">
+                                <td colspan="7">
                                     <ul class="pager" id="">
                                         <?php (!empty($paginacao)) ? print $paginacao : ''; ?>
                                     </ul>

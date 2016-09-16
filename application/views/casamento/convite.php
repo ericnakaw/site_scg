@@ -19,16 +19,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			<div id="links">
 				<div class="row">
-					<?php foreach ($dados['crud'] as $convite) {
+					<?php foreach ($dados['portifolio'] as $key => $convite) {
 						?>
 						<div class="col-sm-6 col-md-4">
-							<div class="w3-container w3-card-2 w3-padding w3-margin-bottom w3-margin-top">
+						<!--<div class="w3-container w3-card-2 w3-padding w3-margin-bottom w3-margin-top">-->
+							<div class="w3-container w3-padding">
 								<a href="<?=base_url($convite->local)?>" title="<?=$convite->titulo?>" data-gallery>
-									<img class="cover" style="width: 100%;height: 250px;" src="<?=base_url($convite->local)?>" alt="<?=$convite->titulo?>">
+									<img class="portifolio_img" src="<?=base_url($convite->local)?>" alt="<?=$convite->alt?>">
 								</a>
 								<div class="">
-									<h3><?=$convite->titulo?></h3>
-									<p><?=$convite->descricao?></p>
+									<h3 class="hidden"><?=$convite->titulo?></h3>
+									<p class="hidden"><?=$convite->descricao?></p>
 								</div>
 							</div>
 						</div>
@@ -44,25 +45,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row text-center">
 				<div class="col-lg-12">
 					<ul class="pagination">
-						<li>
-							<a href="#">&laquo;</a>
-						</li>
-						<li class="active">
-							<a href="#">1</a>
-						</li>
-						<li class="">
-							<a href="#">2</a>
-						</li>
-						<li class="">
-							<a href="#">3</a>
-						</li>
-						<li>
-							<a href="#">&raquo;</a>
-						</li>
+						<?php echo $dados['paginacao']?>
 					</ul>
 				</div>
 			</div>
-			<!-- /.row -->
+			<!-- /Pagination -->
 
 			<hr>
 

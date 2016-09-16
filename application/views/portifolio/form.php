@@ -2,24 +2,17 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 if ($dados['acao'] == 'inserir') {
-    $action = 'crud/inserir';
+    $action = 'portifolio/inserir';
     $id = '';
-    $dados['crud'] = new crud_m();
+    $dados['portifolio'] = new Portifolio_m();
 } elseif ($dados['acao'] == 'editar') {
-    $action = 'crud/editar';
+    $action = 'portifolio/editar';
 }
 ?>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#portifolio option[value="<?=$dados['crud']->portifolio?>"]').attr("selected", "selected");
-        $('#item option[value="<?=$dados['crud']->item?>"]').attr("selected", "selected");
-
-        /*$('#local').change(function(event) {
-
-            var src = document.getElementById("local");
-            var target = document.getElementById("target");
-            showImage($('#local'),$('#target'));
-        });*/
+        $('#portifolio option[value="<?=$dados['portifolio']->portifolio?>"]').attr("selected", "selected");
+        $('#item option[value="<?=$dados['portifolio']->item?>"]').attr("selected", "selected");
     });
 
     function showImage(src, target) {
@@ -46,19 +39,19 @@ if ($dados['acao'] == 'inserir') {
             <form method="post" action="<?=base_url($action)?>" class="form-horizontal" role="form" enctype="multipart/form-data" />
 
                 <!--ID-->
-                <?= form_hidden('id', $dados['crud']->id) ?>
+                <?= form_hidden('id', $dados['portifolio']->id) ?>
                 <!--titulo-->
                 <div class="form-group">
                     <?= form_label('Titulo: ', 'titulo', array('class' => 'control-label col-sm-2')) ?>
                     <div class="col-sm-5">
-                        <input type="text" value="<?=$dados['crud']->titulo?>" name="titulo" id="titulo" class="form-control" placeholder="titulo"  required />
+                        <input type="text" value="<?=$dados['portifolio']->titulo?>" name="titulo" id="titulo" class="form-control" placeholder="titulo"  required />
                     </div>
                 </div>
                 <!--descricao-->
                 <div class="form-group">
                     <?= form_label('Descriçao: ', 'descricao', array('class' => 'control-label col-sm-2')) ?>
                     <div class="col-sm-5">
-                        <textarea type="text" name="descricao" id="descricao" class="form-control" placeholder="descricao"  required><?=$dados['crud']->descricao?></textarea>
+                        <textarea type="text" name="descricao" id="descricao" class="form-control" placeholder="descricao"><?=$dados['portifolio']->descricao?></textarea>
                     </div>
                 </div>
                 <!--portifolio-->
@@ -91,15 +84,15 @@ if ($dados['acao'] == 'inserir') {
                 <div class="form-group">
                     <?= form_label('Alt: ', 'alt', array('class' => 'control-label col-sm-2')) ?>
                     <div class="col-sm-5">
-                        <input type="text" value="<?=$dados['crud']->alt?>" name="alt" id="alt" class="form-control" placeholder="Alt do attributo da tag img"  required />
+                        <input type="text" value="<?=$dados['portifolio']->alt?>" name="alt" id="alt" class="form-control" placeholder="Alt do attributo da tag img"  required />
                     </div>
                 </div>
                 <!-- Imagem -->
                 <div class="form-group">
                     <?= form_label('Imagem: ', 'Imagem', array('class' => 'control-label col-sm-2')) ?>
-                    <div class="col-sm-5">
+                    <div class="col-sm-2">
                         <a href="#" class="thumbnail">
-                            <img src="<?= base_url( $dados['crud']->local)?>" id="target" alt="...">
+                            <img src="<?= base_url( $dados['portifolio']->local)?>" id="target" alt="">
                         </a>
                     </div>
                 </div>
@@ -113,7 +106,7 @@ if ($dados['acao'] == 'inserir') {
                 <!--Botoes-->
                 <div class="form-group">        
                     <div class="col-sm-offset-2 col-sm-5">
-                        <?= anchor(base_url('crud'), 'Cancelar', 'class="btn btn-default"') ?>
+                        <?= anchor(base_url('portifolio'), 'Cancelar', 'class="btn btn-default"') ?>
                         <?= form_submit('salvar', 'Salvar', 'class="btn btn-success"') ?>
                     </div>
                 </div>
