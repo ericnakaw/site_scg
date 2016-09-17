@@ -66,12 +66,12 @@ class Portifolio extends CI_Controller {
             $this->session->set_flashdata('erro', '<p>Não foi possível inserir este registro</p>');
         }
         else{
-         $this->session->set_flashdata('sucesso', '<b>Registro</b> e <b>Arquivo</b> foram inseridos com sucesso');
-     }
-     redirect(base_url('portifolio'), 'location');
- }
+           $this->session->set_flashdata('sucesso', '<b>Registro</b> e <b>Arquivo</b> foram inseridos com sucesso');
+       }
+       redirect(base_url('portifolio'), 'location');
+   }
 
- public function editar() {
+   public function editar() {
     $objeto = $this->Portifolio_m->get_object($this->input->post('id'));
     $objeto->id = $this->input->post('id');
     $objeto->titulo = $this->input->post('titulo');
@@ -105,9 +105,9 @@ class Portifolio extends CI_Controller {
         $this->session->set_flashdata('erro', '<p>Não foi possível editar este registro</p>');
     }
     else{
-       $this->session->set_flashdata('sucesso', '<b>Registro</b> e <b>Arquivo</b> foram editados com sucesso');
-   }
-   redirect(base_url('portifolio'), 'location');
+     $this->session->set_flashdata('sucesso', '<b>Registro</b> e <b>Arquivo</b> foram editados com sucesso');
+ }
+ redirect(base_url('portifolio'), 'location');
 }
 
 public function deletar() {
@@ -144,8 +144,26 @@ public function do_upload($portifolio,$item){
         }
     }
 
-    public function form_multi_insert(){
-        set_layout('conteudo', load_content('portifolio/form_multi_insert'));
+    public function form_multiples_inserts(){
+        set_layout('conteudo', load_content('portifolio/form_multiples_inserts'));
         load_layout();
+    }
+
+    public function do_multiples_inserts(){
+        $objeto = new Portifolio_m();
+        $objeto->id = null;
+        $objeto->local = '/assets/img/uploads/'; //variável somente com minha estrutura de pasta
+        $objeto->titulo = $this->input->post('titulo');
+        $objeto->descricao = $this->input->post('descricao');
+        $objeto->portifolio = $this->input->post('portifolio');
+        $objeto->item = $this->input->post('item');
+        $objeto->alt = $this->input->post('alt');
+        if($this->Portifolio_m->do_multiple_inserts($objeto,$this->input->post('path_from'))){
+            $this->session->set_flashdata('sucesso', '<p>Multiplos inserts realizados com sucesso!</p>');
+        }
+        else{
+            $this->session->set_flashdata('erro', '<p>Erro ao inserir multiplas querys!</p>');
+        }
+        redirect(base_url('portifolio'), 'location');
     }
 }

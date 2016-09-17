@@ -11,6 +11,7 @@ class Portifolio_m extends CI_Model {
     var $portifolio;
     var $item;
     var $alt;
+    var $path_from;
 
     public function __construct() {
         parent::__construct();
@@ -117,14 +118,36 @@ class Portifolio_m extends CI_Model {
         return $object_lista;
     }
 
-    public function do_multiple_inserts(){
-        $path    = 'C:\Users\Eric\Desktop\UPLOADS\Lembrancas\JPEG';
+    public function do_multiple_inserts(Portifolio_m $objeto,$from_path){
+        $path    = $from_path; //'C:\Users\Eric\Desktop\UPLOADS\Lembrancas\JPEG'
         $files = array_diff(scandir($path), array('.', '..','Thumbs.db'));
-
+        $parametros;
         foreach ($files as $file) {
-            $sql = "INSERT INTO `portifolio` (`id`, `titulo`, `descricao`, `portifolio`, `item`, `alt`, `local`) 
-            VALUES (NULL, 'Convite', 'Lembranca', 'casamento', 'lembranca', 'lembranca', '/assets/img/uploads/casamento/lembranca/{$file}');";
-            $this->db->query($sql);
+
+            $parametros[] = array(
+                "id" => null,
+                "titulo" => $objeto->titulo,
+                "descricao" => $objeto->descricao,
+                "portifolio" => $objeto->portifolio,
+                "item" => $objeto->item,
+                "alt" => $objeto->alt,
+                "local" => "/assets/img/uploads/{$objeto->portifolio}/$objeto->item/{$file}"
+                );
+        }
+
+        $this->db->trans_begin();
+
+        $this->db->insert_batch("portifolio",$parametros);
+
+        if ($this->db->trans_status() === FALSE)
+        {
+            $this->db->trans_rollback();
+            return false;
+        }
+        else
+        {
+            $this->db->trans_commit();
+            return true;
         }
     }
 
