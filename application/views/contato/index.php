@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <h2>Solicite um orçamento</h2>
                     </header>
                     <div class="w3-container">
-                        <form id="form_contato" action="<?= base_url("index.php/ajax/form_contato") ?>" method="POST" role="form">
+                        <form id="form_contato" action="<?= base_url("contato/email") ?>" method="POST" role="form">
 
                             <div class="form-group col-xs-12 col-md-12 col-lg-12">
                                 <label for="nome">Nome:</label>
@@ -36,12 +36,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <label for="evento">Evento:</label>
                                 <select name="evento" id="evento" class="form-control" required>
                                     <option value="" disabled selected>Selecione o seu evento</option>
-                                    <option value="casamento">Casamento</option>
-                                    <option value="debutante">15 anos</option>
-                                    <option value="aniversario">Aniversário</option>
-                                    <option value="cha">Chá</option>
-                                    <option value="corporativo">Corporativo</option>
-                                    <option value="outros">Outros</option>
+                                    <option value="Casamento">Casamento</option>
+                                    <option value="Debutante">15 anos</option>
+                                    <option value="Aniversario">Aniversário</option>
+                                    <option value="Infantil">Infantil</option>
+                                    <option value="Corporativo">Corporativo</option>
+                                    <option value="Outros">Outros</option>
                                 </select>
                             </div>
                             <div class="form-group col-xs-12 col-md-6 col-lg-6">
@@ -112,6 +112,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     if (!!result) {
                         console.log(result);
                         $('#return_form_success').slideDown();
+                        $("#form_contato")[0].reset();
                     } else {
                         console.log(result);
                         $('#return_form_error').slideDown();

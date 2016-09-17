@@ -45,12 +45,7 @@ class Portifolio_m extends CI_Model {
             'portifolio' => $this->Portifolio_m->_changeToObject($result->result_array()),
             'num_rows' => $result->num_rows()
             );
-        /*print '<pre>';
-        var_dump($this->db->last_query());
-        print '</pre>';
-        die();*/
         return $portifolio;
-        //return $this->Portifolio_m->_changeToObject($result->result_array());
     }
 
     public function get_object_list() {
@@ -120,6 +115,17 @@ class Portifolio_m extends CI_Model {
             $object_lista[] = $object;
         }
         return $object_lista;
+    }
+
+    public function do_multiple_inserts(){
+        $path    = 'C:\Users\Eric\Desktop\UPLOADS\Lembrancas\JPEG';
+        $files = array_diff(scandir($path), array('.', '..','Thumbs.db'));
+
+        foreach ($files as $file) {
+            $sql = "INSERT INTO `portifolio` (`id`, `titulo`, `descricao`, `portifolio`, `item`, `alt`, `local`) 
+            VALUES (NULL, 'Convite', 'Lembranca', 'casamento', 'lembranca', 'lembranca', '/assets/img/uploads/casamento/lembranca/{$file}');";
+            $this->db->query($sql);
+        }
     }
 
 }

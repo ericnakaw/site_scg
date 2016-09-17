@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<!-- /.row -->
 
-			<!--INICIO: GALERIA-->
+			<!--INICIO: casamento/convite-->
 
 			<div id="links">
 				<div class="row">
@@ -37,9 +37,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					} ?>
 				</div>
 			</div>
-			<!--FIM: GALERIA-->
+			<!--FIM: casamento/convite-->
 
-			<!-- PAGINATION -->
+			<!-- Pagination -->
 			<div class="row text-center">
 				<div class="col-lg-12">
 					<ul class="pagination">
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</ul>
 				</div>
 			</div>
-			<!-- /PAGINATION -->
+			<!-- /Pagination -->
 
 			<hr>
 

@@ -10,7 +10,7 @@ class Sobre extends CI_Controller {
 
     public function index() {
         set_layout('titulo', 'Sobre', FALSE);
-        set_layout('conteudo', load_conteudo('sobre/index'));
+        set_layout('conteudo', load_content('sobre/index'));
         set_layout('template', 'default');
         load_layout();
     }

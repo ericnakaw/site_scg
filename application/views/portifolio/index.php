@@ -13,6 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <a class="btn btn-success" href="<?= base_url('portifolio/form') ?>"><span class="glyphicon glyphicon-plus"></span></a>
                     <a id="editar" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
                     <a id="deletar" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span></a>
+                    <a class="btn btn-info" href="<?=base_url('portifolio/form_multi_insert')?>">Formulário Multi Inserts</a>
                 </div>
             </div>
             <hr>    

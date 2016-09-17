@@ -143,4 +143,9 @@ public function do_upload($portifolio,$item){
             return $data; //array com os dados do arquivo
         }
     }
+
+    public function form_multi_insert(){
+        set_layout('conteudo', load_content('portifolio/form_multi_insert'));
+        load_layout();
+    }
 }

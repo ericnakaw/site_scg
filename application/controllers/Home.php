@@ -10,13 +10,13 @@ class Home extends CI_Controller {
 
     public function index() {
         set_layout('titulo', 'Home', FALSE);
-        set_layout('conteudo', load_conteudo('home/index'));
+        set_layout('conteudo', load_content('home/index'));
         set_layout('template', 'default');
         load_layout();
     }
     public function index2() {
         set_layout('titulo', 'Home', FALSE);
-        set_layout('conteudo', load_conteudo('home/index2'));
+        set_layout('conteudo', load_content('home/index2'));
         set_layout('template', 'default');
         load_layout();
     }
@@ -37,7 +37,7 @@ class Home extends CI_Controller {
 
 
         print json_encode($view_data);
-        //set_layout('conteudo', load_conteudo('home/file',$view_data));
+        //set_layout('conteudo', load_content('home/file',$view_data));
         //load_layout();
     }
 }

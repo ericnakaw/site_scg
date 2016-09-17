@@ -22,27 +22,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h3>
 					<a href="<?=base_url('casamento/convite')?>">Convite</a>
 				</h3>
-				<p>Em construção.</p>
+				<p></p>
 			</div>
 			<div class="col-md-4 portfolio-item">
-				<a href="#">
+				<a href="<?=base_url('casamento/lembranca')?>">
 					<!-- 700x400 -->
 					<img class="img-responsive" src="<?=base_url('assets/img/convite_especial_700x400.jpg')?>" alt="">
 				</a>
 				<h3>
 					<a href="#">Lembrança</a>
 				</h3>
-				<p>Em construção.</p>
+				<p></p>
 			</div>
 			<div class="col-md-4 portfolio-item">
-				<a href="#">
+				<a href="<?=base_url('casamento/acessorio')?>">
 					<!-- 700x400 -->
 					<img class="img-responsive" src="<?=base_url('assets/img/15anos_700x400.jpg')?>" alt="">
 				</a>
 				<h3>
 					<a href="#">Acessórios</a>
 				</h3>
-				<p>Em construção.</p>
+				<p></p>
 			</div>
 		</div>
 		<!-- /.Projects Row -->

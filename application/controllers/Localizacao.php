@@ -10,7 +10,7 @@ class Localizacao extends CI_Controller {
 
     public function index() {
         set_layout('titulo', 'Localizacao', FALSE);
-        set_layout('conteudo', load_conteudo('localizacao/index'));
+        set_layout('conteudo', load_content('localizacao/index'));
         set_layout('template', 'default');
         load_layout();
     }

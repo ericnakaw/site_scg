@@ -53,17 +53,6 @@ function get_layout() {
     return $CI->sistema->layout;
 }
 
-// definir qual a view do bloco principal
-function load_conteudo($view, $dados = NULL) {
-    $CI = & get_instance();
-    if ($view != NULL) {
-        // terceiro parametro(TRUE) e para retornar a view, e nao printar
-        return $CI->load->view("$view", array('dados' => $dados), TRUE);
-    } else {
-        return FALSE;
-    }
-}
-
 // Carregar o layout definido na variavel Sistema->layout
 function load_layout() {
     $CI = & get_instance();
