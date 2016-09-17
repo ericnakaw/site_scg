@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Multi_upload extends CI_Controller {
+class Multi_insert extends CI_Controller {
 
 	public function __construct()
 	{
@@ -23,5 +23,5 @@ class Multi_upload extends CI_Controller {
 	}
 }
 
-/* End of file Multi_upload.php */
-/* Location: ./application/controllers/Multi_upload.php */
+/* End of file Multi_insert.php */
+/* Location: ./application/controllers/Multi_insert.php */

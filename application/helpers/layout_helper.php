@@ -16,9 +16,9 @@ function init_layout() {
     set_layout('footer', load_content('template/footer/footer'));
     set_layout('conteudo', "Não foi carregado nenhum conteudo na variavel Sistema->layout['conteudo']");
     //CSS
-    set_layout('header', load_css(array('blueimp-gallery.min','bootstrap-image-gallery','w3css','main','bootstrap.min', 'carousel', 'googleapis')), FALSE);
+    set_layout('header', load_css(array('blueimp-gallery.min','bootstrap-image-gallery','w3css','bootstrap.min', 'carousel', 'googleapis','main','DirectionAwareHoverEffect-noJS','DirectionAwareHoverEffect-style')), FALSE);
     //JS
-    set_layout('header', load_js(array('jquery.min','blueimp-gallery.min', 'bootstrap.min', 'ie10-viewport-bug-workaround', 'holder.min','bootpag.min')), FALSE);
+    set_layout('header', load_js(array('jquery.min','blueimp-gallery.min', 'bootstrap.min', 'ie10-viewport-bug-workaround', 'holder.min','bootpag.min','DirectionAwareHoverEffect-jquery.hoverdir')), FALSE);
 }
 
 // Definir prodiedades do layout

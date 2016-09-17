@@ -70,7 +70,6 @@ class Portifolio extends CI_Controller {
         redirect(base_url('portifolio'), 'location');
     }
 
-
     public function editar() {
         $objeto = $this->Portifolio_m->get_object($this->input->post('id'));
         $objeto->id = $this->input->post('id');
@@ -109,15 +108,14 @@ class Portifolio extends CI_Controller {
         redirect(base_url('portifolio'), 'location');
     }
 
-
     public function deletar() {
         $id = $this->uri->segment(3);
         $objeto = $this->Portifolio_m->get_object($id);
         $server_path = str_ireplace('\\', '/', getcwd());
-            //SE DELETAR O ARQUIVO DA PASTA, EXCLUO O REGISTRO NA TABELA
+        //SE DELETAR O ARQUIVO DA PASTA, EXCLUO O REGISTRO NA TABELA
         if ($this->Portifolio_m->deletar($id)) {
             $this->session->set_flashdata('sucesso', '<b>Registro</b> excuido com sucesso');
-                //Excluo o arquivo da pasta
+            //Excluo o arquivo da pasta
             if (unlink($server_path . $objeto->local)) {
                 $this->session->set_flashdata('sucesso', '<b>Registro</b> e <b>Arquivo</b> foram excuidos com sucesso');
             }
@@ -127,7 +125,7 @@ class Portifolio extends CI_Controller {
         redirect(base_url('portifolio'), 'location');
     }
 
-        //Upload de arquivos
+    //Upload de arquivos
     public function do_upload($portifolio, $item) {
         $config['upload_path'] = 'assets/img/uploads/' . $portifolio . '/' . $item . '/';
         $config['allowed_types'] = 'gif|jpg|png';
@@ -143,12 +141,12 @@ class Portifolio extends CI_Controller {
         }
     }
 
-    public function form_multiples_inserts(){
+    public function form_multiples_inserts() {
         set_layout('conteudo', load_content('portifolio/form_multiples_inserts'));
         load_layout();
     }
 
-    public function do_multiples_inserts(){
+    public function do_multiples_inserts() {
         $objeto = new Portifolio_m();
         $objeto->id = null;
         $objeto->local = '/assets/img/uploads/'; //variável somente com minha estrutura de pasta
@@ -157,12 +155,12 @@ class Portifolio extends CI_Controller {
         $objeto->portifolio = $this->input->post('portifolio');
         $objeto->item = $this->input->post('item');
         $objeto->alt = $this->input->post('alt');
-        if($this->Portifolio_m->do_multiple_inserts($objeto,$this->input->post('path_from'))){
+        if ($this->Portifolio_m->do_multiple_inserts($objeto, $this->input->post('path_from'))) {
             $this->session->set_flashdata('sucesso', '<p>Multiplos inserts realizados com sucesso!</p>');
-        }
-        else{
+        } else {
             $this->session->set_flashdata('erro', '<p>Erro ao inserir multiplas querys!</p>');
         }
         redirect(base_url('portifolio'), 'location');
     }
+
 }

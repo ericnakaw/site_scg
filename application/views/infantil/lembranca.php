@@ -8,8 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- Page Header -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Portifólio
-                        <small>Infantil</small>
+                    <h1 class="page-header">Infantil
+                        <small>Lembranças</small>
                     </h1>
                 </div>
             </div>

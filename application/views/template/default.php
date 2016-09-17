@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="shortcut icon" href="<?= base_url('assets/img/ico/scg2.ico') ?>" type="image/x-icon" />
 	{header}
 </head>
-<body">
+<body>
 	{menu}
 	{conteudo}
 	{footer}        

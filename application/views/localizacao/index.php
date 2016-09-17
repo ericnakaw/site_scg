@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</h1>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row text-lg">
 			<div class="col-xs-12 col-md-6 col-lg-6">
 				<div class="w3-container w3-card-4">
 					<h3>Loja Tatuapé</h3>

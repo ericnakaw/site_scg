@@ -8,8 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- Page Header -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Portifólio
-                        <small>Adulto</small>
+                    <h1 class="page-header">Adulto
+                        <small>Lembranças</small>
                     </h1>
                 </div>
             </div>
@@ -22,14 +22,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <?php foreach ($dados['portifolio'] as $key => $foto) {
                         ?>
                         <div class="col-sm-6 col-md-4">
-                            <!--<div class="w3-container w3-card-2 w3-padding w3-margin-bottom w3-margin-top">-->
-                            <div class="w3-container w3-padding">
+                            <div class="w3-container w3-card-2 w3-padding w3-margin-bottom w3-margin-top">
                                 <a href="<?= base_url($foto->local) ?>" title="<?= $foto->titulo ?>" data-gallery>
                                     <img class="portifolio_img" src="<?= base_url($foto->local) ?>" alt="<?= $foto->alt ?>">
                                 </a>
                                 <div class="">
-                                    <h3 class="hidden"><?= $foto->titulo ?></h3>
-                                    <p class="hidden"><?= $foto->descricao ?></p>
+                                    <h3><?= $foto->titulo ?></h3>
+                                    <p><?= $foto->descricao ?></p>
                                 </div>
                             </div>
                         </div>

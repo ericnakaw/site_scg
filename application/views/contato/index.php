@@ -76,7 +76,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </footer>
               </div>
           </div>
-          <div class="col-xs-12 col-md-6 col-md-6">
+          <div class="col-xs-12 col-md-6 col-md-6 text-lg">
             <h3>Loja Tatuapé</h3>
             Atendimento:<br>
             Seg a Sex das 09h00 às 17h30<br>
