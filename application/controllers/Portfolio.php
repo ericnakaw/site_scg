@@ -2,21 +2,21 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Portifolio extends CI_Controller {
+class Portfolio extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Portifolio_m');
+        $this->load->model('Portfolio_m');
         $this->load->helper(array('form', 'url'));
         $this->load->helper("file");
         init_layout();
-        set_layout('titulo', 'Portifolio', FALSE);
+        set_layout('titulo', 'Portfolio', FALSE);
     }
 
     public function index() {
-        $data['titulo_painel'] = 'Portifolio';
-        $data['portifolio'] = $this->Portifolio_m->get_object_list();
-        set_layout('conteudo', load_content('portifolio/index', $data));
+        $data['titulo_painel'] = 'Portfolio';
+        $data['portfolio'] = $this->Portfolio_m->get_object_list();
+        set_layout('conteudo', load_content('portfolio/index', $data));
         load_layout();
     }
 
@@ -24,41 +24,42 @@ class Portifolio extends CI_Controller {
         $id = $this->uri->segment(3);
         if (empty($id)) {
             $data['acao'] = 'inserir';
-            $data['titulo_painel'] = 'Inserir Portifolio';
+            $data['titulo_painel'] = 'Inserir Portfolio';
         } else {
-            $objeto = $this->Portifolio_m->get_object($id);
-            $data['portifolio'] = $objeto;
+            $objeto = $this->Portfolio_m->get_object($id);
+            $data['portfolio'] = $objeto;
             $data['acao'] = 'editar';
-            $data['titulo_painel'] = 'Editar Portifolio';
+            $data['titulo_painel'] = 'Editar Portfolio';
         }
-        set_layout('conteudo', load_content('portifolio/form', $data));
+        set_layout('conteudo', load_content('portfolio/form', $data));
         load_layout();
     }
 
     public function inserir() {
         //Faço o upload enviando a pasta destino
-        $upload = $this->do_upload($this->input->post('portifolio'), $this->input->post('item'));
+        $upload = $this->do_upload($this->input->post('portfolio'), $this->input->post('item'));
         //Se ocorrer um erro, $upload['error'] virá com uma string
         if (!empty($upload['error'])) {
             $this->session->set_flashdata('erro', $upload['error']);
-            redirect(base_url('portifolio/form'), 'location');
+            redirect(base_url('portfolio/form'), 'location');
         }
         //Troco as barras do endereço do servidor com barras invertidas. Ex: C:\xampp\web
         $server_path = str_ireplace('\\', '/', getcwd());
         //Retiro o endereço do servidor para armazenar somente minha estrutura de pastas
         $path = str_ireplace($server_path, '', $upload['upload_data']['file_path'] . $_FILES['local']['name']);
 
-
-        $objeto = new Portifolio_m();
+        date_default_timezone_set('America/Sao_Paulo');
+        $objeto = new Portfolio_m();
         $objeto->id = null;
         $objeto->local = $path; //variável somente com minha estrutura de pasta
         $objeto->titulo = $this->input->post('titulo');
         $objeto->descricao = $this->input->post('descricao');
-        $objeto->portifolio = $this->input->post('portifolio');
+        $objeto->portfolio = $this->input->post('portfolio');
         $objeto->item = $this->input->post('item');
         $objeto->alt = $this->input->post('alt');
+        $objeto->data_postagem = date('Y-m-d H:i:s');
 
-        $id = $this->Portifolio_m->inserir($objeto);
+        $id = $this->Portfolio_m->inserir($objeto);
 
         //Se ocorer um erro no bd, retiro o arquivo inserido na pasta
         if (empty($id)) {
@@ -67,26 +68,26 @@ class Portifolio extends CI_Controller {
         } else {
             $this->session->set_flashdata('sucesso', '<b>Registro</b> e <b>Arquivo</b> foram inseridos com sucesso');
         }
-        redirect(base_url('portifolio'), 'location');
+        redirect(base_url('portfolio'), 'location');
     }
 
     public function editar() {
-        $objeto = $this->Portifolio_m->get_object($this->input->post('id'));
+        $objeto = $this->Portfolio_m->get_object($this->input->post('id'));
         $objeto->id = $this->input->post('id');
         $objeto->titulo = $this->input->post('titulo');
         $objeto->descricao = $this->input->post('descricao');
-        $objeto->portifolio = $this->input->post('portifolio');
+        $objeto->portfolio = $this->input->post('portfolio');
         $objeto->item = $this->input->post('item');
         $objeto->alt = $this->input->post('alt');
 
         //Verificar se foi enviado um arquivo
         if (!empty($_FILES['local']['name'])) {
             //Faço o upload enviando a pasta destino
-            $upload = $this->do_upload($objeto->portifolio, $objeto->item);
+            $upload = $this->do_upload($objeto->portfolio, $objeto->item);
             //Se não fizer upload, retorna para a página com erro
             if (!empty($upload['error'])) {
                 $this->session->set_flashdata('erro', $upload['error']);
-                redirect(base_url('portifolio'), 'location');
+                redirect(base_url('portfolio'), 'location');
             }
             //Excluir o arquivo da pasta
             $server_path = str_ireplace('\\', '/', getcwd());
@@ -99,21 +100,21 @@ class Portifolio extends CI_Controller {
         }
 
         //Se ocorrer um erro no db, retiro o arquivo inserido da pasta
-        if (empty($this->Portifolio_m->editar($objeto))) {
+        if (empty($this->Portfolio_m->editar($objeto))) {
             unlink($objeto->local);
             $this->session->set_flashdata('erro', '<p>Não foi possível editar este registro</p>');
         } else {
             $this->session->set_flashdata('sucesso', '<b>Registro</b> e <b>Arquivo</b> foram editados com sucesso');
         }
-        redirect(base_url('portifolio'), 'location');
+        redirect(base_url('portfolio'), 'location');
     }
 
     public function deletar() {
         $id = $this->uri->segment(3);
-        $objeto = $this->Portifolio_m->get_object($id);
+        $objeto = $this->Portfolio_m->get_object($id);
         $server_path = str_ireplace('\\', '/', getcwd());
         //SE DELETAR O ARQUIVO DA PASTA, EXCLUO O REGISTRO NA TABELA
-        if ($this->Portifolio_m->deletar($id)) {
+        if ($this->Portfolio_m->deletar($id)) {
             $this->session->set_flashdata('sucesso', '<b>Registro</b> excuido com sucesso');
             //Excluo o arquivo da pasta
             if (unlink($server_path . $objeto->local)) {
@@ -122,12 +123,12 @@ class Portifolio extends CI_Controller {
         } else {
             $this->session->set_flashdata('erro', '<p>O registro não foi excuido!</p>');
         }
-        redirect(base_url('portifolio'), 'location');
+        redirect(base_url('portfolio'), 'location');
     }
 
     //Upload de arquivos
-    public function do_upload($portifolio, $item) {
-        $config['upload_path'] = 'assets/img/uploads/' . $portifolio . '/' . $item . '/';
+    public function do_upload($portfolio, $item) {
+        $config['upload_path'] = 'assets/img/uploads/' . $portfolio . '/' . $item . '/';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = 10000;
 
@@ -142,25 +143,27 @@ class Portifolio extends CI_Controller {
     }
 
     public function form_multiples_inserts() {
-        set_layout('conteudo', load_content('portifolio/form_multiples_inserts'));
+        set_layout('conteudo', load_content('portfolio/form_multiples_inserts'));
         load_layout();
     }
 
     public function do_multiples_inserts() {
-        $objeto = new Portifolio_m();
+        date_default_timezone_set('America/Sao_Paulo');
+        $objeto = new Portfolio_m();
         $objeto->id = null;
         $objeto->local = '/assets/img/uploads/'; //variável somente com minha estrutura de pasta
         $objeto->titulo = $this->input->post('titulo');
         $objeto->descricao = $this->input->post('descricao');
-        $objeto->portifolio = $this->input->post('portifolio');
+        $objeto->portfolio = $this->input->post('portfolio');
         $objeto->item = $this->input->post('item');
         $objeto->alt = $this->input->post('alt');
-        if ($this->Portifolio_m->do_multiple_inserts($objeto, $this->input->post('path_from'))) {
+        $objeto->data_postagem = date('Y-m-d H:i:s');
+        if ($this->Portfolio_m->do_multiple_inserts($objeto, $this->input->post('path_from'))) {
             $this->session->set_flashdata('sucesso', '<p>Multiplos inserts realizados com sucesso!</p>');
         } else {
             $this->session->set_flashdata('erro', '<p>Erro ao inserir multiplas querys!</p>');
         }
-        redirect(base_url('portifolio'), 'location');
+        redirect(base_url('portfolio'), 'location');
     }
 
 }

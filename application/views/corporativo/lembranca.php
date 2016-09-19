@@ -19,12 +19,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <div id="links">
                 <div class="row">
-                    <?php foreach ($dados['portifolio'] as $key => $foto) {
+                    <?php foreach ($dados['portfolio'] as $key => $foto) {
                         ?>
                         <div class="col-sm-6 col-md-4">
                             <div class="w3-container w3-card-2 w3-padding w3-margin-bottom w3-margin-top">
                                 <a href="<?= base_url($foto->local) ?>" title="<?= $foto->titulo ?>" data-gallery>
-                                    <img class="portifolio_img" src="<?= base_url($foto->local) ?>" alt="<?= $foto->alt ?>">
+                                    <img class="portfolio_img" src="<?= base_url($foto->local) ?>" alt="<?= $foto->alt ?>">
                                 </a>
                                 <div class="">
                                     <h3><?= $foto->titulo ?></h3>

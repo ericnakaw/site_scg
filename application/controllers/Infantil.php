@@ -6,7 +6,7 @@ class Infantil extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Portifolio_m');
+        $this->load->model('Portfolio_m');
         $this->load->library('pagination');
         init_layout();
     }
@@ -19,17 +19,16 @@ class Infantil extends CI_Controller {
     public function convite() {
         //pagination settings
         $config['base_url'] = site_url('infantil/convite');
-        $config['total_rows'] = $this->Portifolio_m->get_num_rows('infantil', 'convite');
+        $config['total_rows'] = $this->Portfolio_m->get_num_rows('infantil', 'convite');
         $config['per_page'] = "48";
-        $config["uri_segment"] = 3;
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        //call the model function to get the portifolio
-        $portifolio = $this->Portifolio_m->get_by_portifolio_item('infantil', 'convite', $config["per_page"], $data['page']);
-        $data['portifolio'] = $portifolio['portifolio'];
+        //call the model function to get the portfolio
+        $portfolio = $this->Portfolio_m->get_by_portfolio_item('infantil', 'convite', $config["per_page"], $data['page']);
+        $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
         set_layout('titulo', 'Infantil / Convite', true);
         set_layout('conteudo', load_content('infantil/convite', $data));
@@ -39,17 +38,16 @@ class Infantil extends CI_Controller {
     public function lembranca() {
         //pagination settings
         $config['base_url'] = site_url('infantil/lembranca');
-        $config['total_rows'] = $this->Portifolio_m->get_num_rows('infantil', 'lembranca');
+        $config['total_rows'] = $this->Portfolio_m->get_num_rows('infantil', 'lembranca');
         $config['per_page'] = "48";
-        $config["uri_segment"] = 3;
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        //call the model function to get the portifolio
-        $portifolio = $this->Portifolio_m->get_by_portifolio_item('infantil', 'lembranca', $config["per_page"], $data['page']);
-        $data['portifolio'] = $portifolio['portifolio'];
+        //call the model function to get the portfolio
+        $portfolio = $this->Portfolio_m->get_by_portfolio_item('infantil', 'lembranca', $config["per_page"], $data['page']);
+        $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
 
         set_layout('titulo', 'Infantil / Lembranca', true);
@@ -60,17 +58,16 @@ class Infantil extends CI_Controller {
     public function acessorio() {
         //pagination settings
         $config['base_url'] = site_url('infantil/acessorio');
-        $config['total_rows'] = $this->Portifolio_m->get_num_rows('infantil', 'acessorio');
+        $config['total_rows'] = $this->Portfolio_m->get_num_rows('infantil', 'acessorio');
         $config['per_page'] = "48";
-        $config["uri_segment"] = 3;
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        //call the model function to get the portifolio
-        $portifolio = $this->Portifolio_m->get_by_portifolio_item('infantil', 'acessorio', $config["per_page"], $data['page']);
-        $data['portifolio'] = $portifolio['portifolio'];
+        //call the model function to get the portfolio
+        $portfolio = $this->Portfolio_m->get_by_portfolio_item('infantil', 'acessorio', $config["per_page"], $data['page']);
+        $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
 
         set_layout('titulo', 'Infantil / Acessorio', true);

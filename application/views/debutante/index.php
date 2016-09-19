@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-xs-12 col-md-4 col-lg-4">
                         <li class="w3-card-2 w3-padding">
                         <a href="<?=base_url('debutante/convite')?>">
-                                <img class="img-responsive portifolio_menu w3-card-4" src="<?=base_url('assets/img/uploads/debutante/convite/IMG_3311.jpg')?>" alt="">
+                                <img class="img-responsive portfolio_menu w3-card-4" src="<?=base_url('assets/img/uploads/debutante/convite/IMG_3311.jpg')?>" alt="">
                                 <div><span>Galeria de Convites</span></div>
                             </a>
                             <h3>
@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-xs-12 col-md-4 col-lg-4">
                         <li class="w3-card-2 w3-padding">
                         <a href="<?=base_url('debutante/lembranca')?>">
-                                <img class="img-responsive portifolio_menu w3-card-4" src="<?=base_url('assets/img/uploads/debutante/lembranca/IMG_4274.jpg')?>" alt="">
+                                <img class="img-responsive portfolio_menu w3-card-4" src="<?=base_url('assets/img/uploads/debutante/lembranca/IMG_4274.jpg')?>" alt="">
                                 <div><span>Galeria de Lembranças</span></div>
                             </a>
                             <h3>
@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-xs-12 col-md-4 col-lg-4">
                         <li class="w3-card-2 w3-padding">
                         <a href="<?=base_url('debutante/acessorio')?>">
-                                <img class="img-responsive portifolio_menu w3-card-4" src="<?=base_url('assets/img/uploads/debutante/acessorio/IMG_3948.jpg')?>" alt="">
+                                <img class="img-responsive portfolio_menu w3-card-4" src="<?=base_url('assets/img/uploads/debutante/acessorio/IMG_3948.jpg')?>" alt="">
                                 <div><span>Galeria de acessórios</span></div>
                             </a>
                             <h3>

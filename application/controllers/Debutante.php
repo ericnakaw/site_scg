@@ -6,7 +6,7 @@ class Debutante extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Portifolio_m');
+        $this->load->model('Portfolio_m');
         $this->load->library('pagination');
         init_layout();
         set_layout('titulo', '15 anos', FALSE);
@@ -20,17 +20,16 @@ class Debutante extends CI_Controller {
     public function convite() {
         //pagination settings
         $config['base_url'] = site_url('debutante/convite');
-        $config['total_rows'] = $this->Portifolio_m->get_num_rows('debutante', 'convite');
+        $config['total_rows'] = $this->Portfolio_m->get_num_rows('debutante', 'convite');
         $config['per_page'] = "48";
-        $config["uri_segment"] = 3;
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        //call the model function to get the portifolio
-        $portifolio = $this->Portifolio_m->get_by_portifolio_item('debutante', 'convite', $config["per_page"], $data['page']);
-        $data['portifolio'] = $portifolio['portifolio'];
+        //call the model function to get the portfolio
+        $portfolio = $this->Portfolio_m->get_by_portfolio_item('debutante', 'convite', $config["per_page"], $data['page']);
+        $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
         set_layout('titulo', 'Debutante / Convite', true);
         set_layout('conteudo', load_content('debutante/convite', $data));
@@ -40,17 +39,16 @@ class Debutante extends CI_Controller {
     public function lembranca() {
         //pagination settings
         $config['base_url'] = site_url('debutante/lembranca');
-        $config['total_rows'] = $this->Portifolio_m->get_num_rows('debutante', 'lembranca');
+        $config['total_rows'] = $this->Portfolio_m->get_num_rows('debutante', 'lembranca');
         $config['per_page'] = "48";
-        $config["uri_segment"] = 3;
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        //call the model function to get the portifolio
-        $portifolio = $this->Portifolio_m->get_by_portifolio_item('debutante', 'lembranca', $config["per_page"], $data['page']);
-        $data['portifolio'] = $portifolio['portifolio'];
+        //call the model function to get the portfolio
+        $portfolio = $this->Portfolio_m->get_by_portfolio_item('debutante', 'lembranca', $config["per_page"], $data['page']);
+        $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
 
         set_layout('titulo', 'Debutante / Lembranca', true);
@@ -61,17 +59,16 @@ class Debutante extends CI_Controller {
     public function acessorio() {
         //pagination settings
         $config['base_url'] = site_url('debutante/acessorio');
-        $config['total_rows'] = $this->Portifolio_m->get_num_rows('debutante', 'acessorio');
+        $config['total_rows'] = $this->Portfolio_m->get_num_rows('debutante', 'acessorio');
         $config['per_page'] = "48";
-        $config["uri_segment"] = 3;
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        //call the model function to get the portifolio
-        $portifolio = $this->Portifolio_m->get_by_portifolio_item('debutante', 'acessorio', $config["per_page"], $data['page']);
-        $data['portifolio'] = $portifolio['portifolio'];
+        //call the model function to get the portfolio
+        $portfolio = $this->Portfolio_m->get_by_portfolio_item('debutante', 'acessorio', $config["per_page"], $data['page']);
+        $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
 
         set_layout('titulo', 'Debutante / Acessorio', true);

@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="panel-body">
             <?php $this->load->view('__include/mensagem_crud'); ?>
-            <form method="post" action="<?=base_url('portifolio/do_multiples_inserts')?>" class="form-horizontal" role="form" />
+            <form method="post" action="<?=base_url('portfolio/do_multiples_inserts')?>" class="form-horizontal" role="form" />
             <!--ID-->
             <?= form_hidden('id', '') ?>
             <!--titulo-->
@@ -25,11 +25,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <textarea type="text" name="descricao" id="descricao" class="form-control" placeholder="descricao"></textarea>
                 </div>
             </div>
-            <!--portifolio-->
+            <!--portfolio-->
             <div class="form-group">
-                <?= form_label('Portifólio: ', 'portifolio', array('class' => 'control-label col-sm-2')) ?>
+                <?= form_label('Portfólio: ', 'portfolio', array('class' => 'control-label col-sm-2')) ?>
                 <div class="col-sm-5">
-                    <select name="portifolio" class="form-control" id="portifolio" required>
+                    <select name="portfolio" class="form-control" id="portfolio" required>
                         <option value="" disabled>Selecione</option>
                         <option value="casamento">Casamento</option>
                         <option value="debutante">15 anos</option>
@@ -68,7 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!--Botoes-->
             <div class="form-group">        
                 <div class="col-sm-offset-2 col-sm-5">
-                    <?= anchor(base_url('portifolio'), 'Cancelar', 'class="btn btn-default"') ?>
+                    <?= anchor(base_url('portfolio'), 'Cancelar', 'class="btn btn-default"') ?>
                     <?= form_submit('salvar', 'Salvar', 'class="btn btn-success"') ?>
                 </div>
             </div>

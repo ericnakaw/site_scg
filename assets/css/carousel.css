@@ -158,5 +158,10 @@ body {
     height: 300px;
     object-fit: cover;
   }
+  #custom-bootstrap-menu.navbar-default {
+    background-color: #ffffff !important;
+    border-bottom-width: 1px !important;
+    border-radius: 0px !important;
+  }
   /*fim: teste*/
 }

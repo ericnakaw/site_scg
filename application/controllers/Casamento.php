@@ -5,7 +5,7 @@ class Casamento extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('Portifolio_m');
+		$this->load->model('Portfolio_m');
 		$this->load->library('pagination');
 		init_layout();
 	}
@@ -18,17 +18,16 @@ class Casamento extends CI_Controller {
 	public function convite(){
 		//pagination settings
 		$config['base_url'] = site_url('casamento/convite');
-		$config['total_rows'] = $this->Portifolio_m->get_num_rows('casamento','convite');
+		$config['total_rows'] = $this->Portfolio_m->get_num_rows('casamento','convite');
 		$config['per_page'] = "48";
-		$config["uri_segment"] = 3;
 		$choice = $config["total_rows"] / $config["per_page"];
 		$config["num_links"] = floor($choice);
 		$this->pagination->initialize($config);
 		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        //call the model function to get the portifolio
-		$portifolio = $this->Portifolio_m->get_by_portifolio_item('casamento','convite',$config["per_page"],$data['page']);
-		$data['portifolio'] = $portifolio['portifolio'];
+        //call the model function to get the portfolio
+		$portfolio = $this->Portfolio_m->get_by_portfolio_item('casamento','convite',$config["per_page"],$data['page']);
+		$data['portfolio'] = $portfolio['portfolio'];
 		$data['paginacao'] = $this->pagination->create_links();
 
 		set_layout('titulo', 'Casamento / Convite', true);
@@ -39,17 +38,16 @@ class Casamento extends CI_Controller {
 	public function lembranca(){
 		//pagination settings
 		$config['base_url'] = site_url('casamento/lembranca');
-		$config['total_rows'] = $this->Portifolio_m->get_num_rows('casamento','lembranca');
+		$config['total_rows'] = $this->Portfolio_m->get_num_rows('casamento','lembranca');
 		$config['per_page'] = "48";
-		$config["uri_segment"] = 3;
 		$choice = $config["total_rows"] / $config["per_page"];
 		$config["num_links"] = floor($choice);
 		$this->pagination->initialize($config);
 		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        //call the model function to get the portifolio
-		$portifolio = $this->Portifolio_m->get_by_portifolio_item('casamento','lembranca',$config["per_page"],$data['page']);
-		$data['portifolio'] = $portifolio['portifolio'];
+        //call the model function to get the portfolio
+		$portfolio = $this->Portfolio_m->get_by_portfolio_item('casamento','lembranca',$config["per_page"],$data['page']);
+		$data['portfolio'] = $portfolio['portfolio'];
 		$data['paginacao'] = $this->pagination->create_links();
 
 		set_layout('titulo', 'Casamento / Lembranca', true);
@@ -60,17 +58,16 @@ class Casamento extends CI_Controller {
 	public function acessorio(){
 		//pagination settings
 		$config['base_url'] = site_url('casamento/acessorio');
-		$config['total_rows'] = $this->Portifolio_m->get_num_rows('casamento','acessorio');
+		$config['total_rows'] = $this->Portfolio_m->get_num_rows('casamento','acessorio');
 		$config['per_page'] = "48";
-		$config["uri_segment"] = 3;
 		$choice = $config["total_rows"] / $config["per_page"];
 		$config["num_links"] = floor($choice);
 		$this->pagination->initialize($config);
 		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        //call the model function to get the portifolio
-		$portifolio = $this->Portifolio_m->get_by_portifolio_item('casamento','acessorio',$config["per_page"],$data['page']);
-		$data['portifolio'] = $portifolio['portifolio'];
+        //call the model function to get the portfolio
+		$portfolio = $this->Portfolio_m->get_by_portfolio_item('casamento','acessorio',$config["per_page"],$data['page']);
+		$data['portfolio'] = $portfolio['portfolio'];
 		$data['paginacao'] = $this->pagination->create_links();
 		
 		set_layout('titulo', 'Casamento / Acessorio', true);

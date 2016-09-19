@@ -2,17 +2,17 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 if ($dados['acao'] == 'inserir') {
-    $action = 'portifolio/inserir';
+    $action = 'portfolio/inserir';
     $id = '';
-    $dados['portifolio'] = new Portifolio_m();
+    $dados['portfolio'] = new Portfolio_m();
 } elseif ($dados['acao'] == 'editar') {
-    $action = 'portifolio/editar';
+    $action = 'portfolio/editar';
 }
 ?>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#portifolio option[value="<?=$dados['portifolio']->portifolio?>"]').attr("selected", "selected");
-        $('#item option[value="<?=$dados['portifolio']->item?>"]').attr("selected", "selected");
+        $('#portfolio option[value="<?=$dados['portfolio']->portfolio?>"]').attr("selected", "selected");
+        $('#item option[value="<?=$dados['portfolio']->item?>"]').attr("selected", "selected");
     });
 
     function showImage(src, target) {
@@ -39,26 +39,26 @@ if ($dados['acao'] == 'inserir') {
             <form method="post" action="<?=base_url($action)?>" class="form-horizontal" role="form" enctype="multipart/form-data" />
 
                 <!--ID-->
-                <?= form_hidden('id', $dados['portifolio']->id) ?>
+                <?= form_hidden('id', $dados['portfolio']->id) ?>
                 <!--titulo-->
                 <div class="form-group">
                     <?= form_label('Titulo: ', 'titulo', array('class' => 'control-label col-sm-2')) ?>
                     <div class="col-sm-5">
-                        <input type="text" value="<?=$dados['portifolio']->titulo?>" name="titulo" id="titulo" class="form-control" placeholder="titulo"  required />
+                        <input type="text" value="<?=$dados['portfolio']->titulo?>" name="titulo" id="titulo" class="form-control" placeholder="titulo"  required />
                     </div>
                 </div>
                 <!--descricao-->
                 <div class="form-group">
                     <?= form_label('Descriçao: ', 'descricao', array('class' => 'control-label col-sm-2')) ?>
                     <div class="col-sm-5">
-                        <textarea type="text" name="descricao" id="descricao" class="form-control" placeholder="descricao"><?=$dados['portifolio']->descricao?></textarea>
+                        <textarea type="text" name="descricao" id="descricao" class="form-control" placeholder="descricao"><?=$dados['portfolio']->descricao?></textarea>
                     </div>
                 </div>
-                <!--portifolio-->
+                <!--portfolio-->
                 <div class="form-group">
-                    <?= form_label('Portifólio: ', 'portifolio', array('class' => 'control-label col-sm-2')) ?>
+                    <?= form_label('Portfólio: ', 'portfolio', array('class' => 'control-label col-sm-2')) ?>
                     <div class="col-sm-5">
-                        <select name="portifolio" class="form-control" id="portifolio" required>
+                        <select name="portfolio" class="form-control" id="portfolio" required>
                             <option value="" disabled>Selecione</option>
                             <option value="casamento">Casamento</option>
                             <option value="debutante">15 anos</option>
@@ -84,7 +84,7 @@ if ($dados['acao'] == 'inserir') {
                 <div class="form-group">
                     <?= form_label('Alt: ', 'alt', array('class' => 'control-label col-sm-2')) ?>
                     <div class="col-sm-5">
-                        <input type="text" value="<?=$dados['portifolio']->alt?>" name="alt" id="alt" class="form-control" placeholder="Alt do attributo da tag img"  required />
+                        <input type="text" value="<?=$dados['portfolio']->alt?>" name="alt" id="alt" class="form-control" placeholder="Alt do attributo da tag img"  required />
                     </div>
                 </div>
                 <!-- Imagem -->
@@ -92,7 +92,7 @@ if ($dados['acao'] == 'inserir') {
                     <?= form_label('Imagem: ', 'Imagem', array('class' => 'control-label col-sm-2')) ?>
                     <div class="col-sm-2">
                         <a href="#" class="thumbnail">
-                            <img src="<?= base_url( $dados['portifolio']->local)?>" id="target" alt="">
+                            <img src="<?= base_url( $dados['portfolio']->local)?>" id="target" alt="">
                         </a>
                     </div>
                 </div>
@@ -106,7 +106,7 @@ if ($dados['acao'] == 'inserir') {
                 <!--Botoes-->
                 <div class="form-group">        
                     <div class="col-sm-offset-2 col-sm-5">
-                        <?= anchor(base_url('portifolio'), 'Cancelar', 'class="btn btn-default"') ?>
+                        <?= anchor(base_url('portfolio'), 'Cancelar', 'class="btn btn-default"') ?>
                         <?= form_submit('salvar', 'Salvar', 'class="btn btn-success"') ?>
                     </div>
                 </div>

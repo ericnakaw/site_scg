@@ -10,10 +10,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php $this->load->view('__include/mensagem_crud'); ?>
             <div class="row">
                 <div class="col-md-12">
-                    <a class="btn btn-success" href="<?= base_url('portifolio/form') ?>"><span class="glyphicon glyphicon-plus"></span></a>
+                    <a class="btn btn-success" href="<?= base_url('portfolio/form') ?>"><span class="glyphicon glyphicon-plus"></span></a>
                     <a id="editar" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
                     <a id="deletar" class="btn btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span></a>
-                    <a class="btn btn-info" href="<?=base_url('portifolio/form_multiples_inserts')?>">Formulário Multiplos Inserts</a>
+                    <a class="btn btn-info" href="<?=base_url('portfolio/form_multiples_inserts')?>">Formulário Multiplos Inserts</a>
                 </div>
             </div>
             <hr>    
@@ -22,35 +22,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <table class="table display compact table-bordered " cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <td class="hidden">Id</td>
-                                <td>#</td>
+                                <td>Id</td>
+                                <td>IMG</td>
                                 <td>Titulo</td>
                                 <td>Descricao</td>
-                                <td>Portifolio</td>
+                                <td>Portfolio</td>
                                 <td>Item</td>
                                 <td>Alt</td>
+                                <td>data_postagem</td>
                                 <td>Local</td>
                             </tr>
                         </thead>
                         <tbody id="fbody">
-                            <?php foreach ($dados['portifolio'] as $key => $portifolio) {
+                            <?php foreach ($dados['portfolio'] as $key => $portfolio) {
                                 ?> 
                                 <tr>
-                                    <td class="hidden"><?=$portifolio->id?></td>
-                                    <td><?=$key + 1?></td>
-                                    <td><?=$portifolio->titulo?></td>
-                                    <td><?=$portifolio->descricao?></td>
-                                    <td><?=$portifolio->portifolio?></td>
-                                    <td><?=$portifolio->item?></td>
-                                    <td><?=$portifolio->alt?></td>
-                                    <td><?=$portifolio->local?></td>
+                                    <td><?=$portfolio->id?></td>
+                                    <td class="thumbnail"><img style="width:100px;" src="<?=base_url($portfolio->local)?>"></td>
+                                    <td><?=$portfolio->titulo?></td>
+                                    <td><?=$portfolio->descricao?></td>
+                                    <td><?=$portfolio->portfolio?></td>
+                                    <td><?=$portfolio->item?></td>
+                                    <td><?=$portfolio->alt?></td>
+                                    <td><?=date("d/m/Y", strtotime($portfolio->data_postagem))?></td>
+                                    <td><?=$portfolio->local?></td>
                                 </tr>
                                 <?php
                             }?>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="7">
+                                <td colspan="9">
                                     <ul class="pager" id="">
                                         <?php (!empty($paginacao)) ? print $paginacao : ''; ?>
                                     </ul>

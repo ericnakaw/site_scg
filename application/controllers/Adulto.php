@@ -6,7 +6,7 @@ class Adulto extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Portifolio_m');
+        $this->load->model('Portfolio_m');
         $this->load->library('pagination');
         init_layout();
     }
@@ -19,17 +19,16 @@ class Adulto extends CI_Controller {
     public function convite() {
         //pagination settings
         $config['base_url'] = site_url('adulto/convite');
-        $config['total_rows'] = $this->Portifolio_m->get_num_rows('adulto', 'convite');
+        $config['total_rows'] = $this->Portfolio_m->get_num_rows('adulto', 'convite');
         $config['per_page'] = "48";
-        $config["uri_segment"] = 3;
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        //call the model function to get the portifolio
-        $portifolio = $this->Portifolio_m->get_by_portifolio_item('adulto', 'convite', $config["per_page"], $data['page']);
-        $data['portifolio'] = $portifolio['portifolio'];
+        //call the model function to get the portfolio
+        $portfolio = $this->Portfolio_m->get_by_portfolio_item('adulto', 'convite', $config["per_page"], $data['page']);
+        $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
         set_layout('titulo', 'Adulto / Convite', true);
         set_layout('conteudo', load_content('adulto/convite', $data));
@@ -39,17 +38,16 @@ class Adulto extends CI_Controller {
     public function lembranca() {
         //pagination settings
         $config['base_url'] = site_url('adulto/lembranca');
-        $config['total_rows'] = $this->Portifolio_m->get_num_rows('adulto', 'lembranca');
+        $config['total_rows'] = $this->Portfolio_m->get_num_rows('adulto', 'lembranca');
         $config['per_page'] = "48";
-        $config["uri_segment"] = 3;
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        //call the model function to get the portifolio
-        $portifolio = $this->Portifolio_m->get_by_portifolio_item('adulto', 'lembranca', $config["per_page"], $data['page']);
-        $data['portifolio'] = $portifolio['portifolio'];
+        //call the model function to get the portfolio
+        $portfolio = $this->Portfolio_m->get_by_portfolio_item('adulto', 'lembranca', $config["per_page"], $data['page']);
+        $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
 
         set_layout('titulo', 'Adulto / Lembranca', true);
@@ -60,17 +58,16 @@ class Adulto extends CI_Controller {
     public function acessorio() {
         //pagination settings
         $config['base_url'] = site_url('adulto/acessorio');
-        $config['total_rows'] = $this->Portifolio_m->get_num_rows('adulto', 'acessorio');
+        $config['total_rows'] = $this->Portfolio_m->get_num_rows('adulto', 'acessorio');
         $config['per_page'] = "48";
-        $config["uri_segment"] = 3;
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-        //call the model function to get the portifolio
-        $portifolio = $this->Portifolio_m->get_by_portifolio_item('adulto', 'acessorio', $config["per_page"], $data['page']);
-        $data['portifolio'] = $portifolio['portifolio'];
+        //call the model function to get the portfolio
+        $portfolio = $this->Portfolio_m->get_by_portfolio_item('adulto', 'acessorio', $config["per_page"], $data['page']);
+        $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
 
         set_layout('titulo', 'Adulto / Acessorio', true);
