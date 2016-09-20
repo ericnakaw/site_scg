@@ -67,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div>
                             </div>
                             <div class="col-xs-4 col-md-4 col-lg-4 pull-right">
-                                <button type="submit" class="btn btn-primary pull-right btn-block">Enviar</button>
+                                <button type="submit" class="btn btn-custom pull-right btn-block">Enviar</button>
                             </div>
                         </form>
                     </div>

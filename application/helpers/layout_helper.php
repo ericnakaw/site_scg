@@ -13,12 +13,13 @@ function init_layout() {
     set_layout('template', 'default');
     set_layout('titulo', 'Camila Golin | ');
     set_layout('menu', load_content('template/menu/menu'));
+    set_layout('breadcrumb', load_content('template/breadcrumb/breadcrumb'));
     set_layout('footer', load_content('template/footer/footer'));
     set_layout('conteudo', "Não foi carregado nenhum conteudo na variavel Sistema->layout['conteudo']");
     //CSS
     set_layout('header', load_css(array('blueimp-gallery.min','bootstrap-image-gallery','w3css','bootstrap.min', 'carousel', 'googleapis','main','DirectionAwareHoverEffect-noJS','DirectionAwareHoverEffect-style')), FALSE);
     //JS
-    set_layout('header', load_js(array('jquery.min','blueimp-gallery.min', 'bootstrap.min', 'ie10-viewport-bug-workaround', 'holder.min','bootpag.min','DirectionAwareHoverEffect-jquery.hoverdir')), FALSE);
+    set_layout('header', load_js(array('jquery.min','blueimp-gallery.min', 'bootstrap.min', 'ie10-viewport-bug-workaround', 'holder.min','bootpag.min','DirectionAwareHoverEffect-jquery.hoverdir','main')), FALSE);
 }
 
 // Definir prodiedades do layout
@@ -64,15 +65,15 @@ function load_layout() {
 function load_css($arquivo = NULL, $pasta = 'assets/css', $media = 'all') {
     if ($arquivo != NULL):
         $CI = & get_instance();
-        $CI->load->helper('url');
-        $retorno = '';
-        if (is_array($arquivo)) {
-            foreach ($arquivo as $css) {
-                $retorno .= '<link rel="stylesheet" type="text/css" href="' . base_url("$pasta/$css.css") . '" media="' . $media . '" />';
-            }
-        } else {
-            $retorno .= '<link rel="stylesheet" type="text/css" href="' . base_url("$pasta/$arquivo.css") . '" media="' . $media . '" />';
+    $CI->load->helper('url');
+    $retorno = '';
+    if (is_array($arquivo)) {
+        foreach ($arquivo as $css) {
+            $retorno .= '<link rel="stylesheet" type="text/css" href="' . base_url("$pasta/$css.css") . '" media="' . $media . '" />';
         }
+    } else {
+        $retorno .= '<link rel="stylesheet" type="text/css" href="' . base_url("$pasta/$arquivo.css") . '" media="' . $media . '" />';
+    }
     endif;
     return $retorno;
 }
@@ -112,19 +113,19 @@ function thumb($imagem = NULL, $largura = 100, $altura = 75, $geratag = TRUE) {
         $retorno = base_url('uploads/thumbs/' . $thumb);
     else:
         $CI->load->library('image_lib');
-        $config['image_library'] = 'gd2';
-        $config['source_image'] = './uploads/' . $imagem;
-        $config['new_image'] = './uploads/thumbs/' . $thumb;
-        $config['maintain_ratio'] = TRUE;
-        $config['width'] = $largura;
-        $config['height'] = $altura;
-        $CI->image_lib->initialize($config);
-        if ($CI->image_lib->resize()):
-            $CI->image_lib->clear();
-            $retorno = base_url('uploads/thumbs/' . $thumb);
-        else:
-            $retorno = FALSE;
-        endif;
+    $config['image_library'] = 'gd2';
+    $config['source_image'] = './uploads/' . $imagem;
+    $config['new_image'] = './uploads/thumbs/' . $thumb;
+    $config['maintain_ratio'] = TRUE;
+    $config['width'] = $largura;
+    $config['height'] = $altura;
+    $CI->image_lib->initialize($config);
+    if ($CI->image_lib->resize()):
+        $CI->image_lib->clear();
+    $retorno = base_url('uploads/thumbs/' . $thumb);
+    else:
+        $retorno = FALSE;
+    endif;
     endif;
     if ($geratag && $retorno != FALSE)
         $retorno = '<img src="' . $retorno . '" alt="" />';
@@ -148,6 +149,30 @@ function enviar_email($para, $assunto, $mensagem, $cc = '', $co = '') {
     } else {
         return FALSE;
     }
+}
+
+// Gera um breadcrumb com base no controller atual
+function breadcrumb() {
+    $CI = & get_instance();
+    $CI->load->helper('url');
+    // Buscar a classe
+    $classe = str_replace('_', ' ', ucfirst($CI->router->class));
+
+
+    if ($classe == 'Home') {
+        $classe = '';
+    } else {
+        $classe = " &raquo; " . anchor($CI->router->class, $classe);
+    }
+
+    // buscar o metodo
+    $metodo = ucwords(str_replace('_', ' ', $CI->router->method));
+    if ($metodo && $metodo != 'Index') {
+        $metodo = " &raquo; " . anchor($CI->router->class . "/" . $CI->router->method, $metodo);
+    } else {
+        $metodo = '';
+    }
+    return '<ol id="breadcrumb" class="breadcrumb"><li> ' . anchor('home', 'Home') . $classe . $metodo . '</li></ol>';
 }
 
 /*

@@ -163,5 +163,10 @@ body {
     border-bottom-width: 1px !important;
     border-radius: 0px !important;
   }
+  #breadcrumb{
+    margin-top: 50px !important;
+    margin-left: 0px !important;
+    list-style: none;
+  }
   /*fim: teste*/
 }

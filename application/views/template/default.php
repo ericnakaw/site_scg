@@ -10,11 +10,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="icon" href="<?= base_url('assets/img/ico/scg2.ico') ?>" type="image/x-icon" />
-    <link rel="shortcut icon" href="<?= base_url('assets/img/ico/scg2.ico') ?>" type="image/x-icon" />
+	<link rel="shortcut icon" href="<?= base_url('assets/img/ico/scg2.ico') ?>" type="image/x-icon" />
 	{header}
 </head>
 <body>
 	{menu}
+	<?php 
+	$controller = array("home", "sobre", "contato", "localizacao");
+
+	if(!in_array($this->router->class, $controller)){
+		?>
+		<div id="breadcrumb" class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-12 col-lg-12">
+					{breadcrumb}
+				</div>
+			</div>
+		</div>
+		<?php
+	}
+	?>
 	{conteudo}
 	{footer}        
 </body>
