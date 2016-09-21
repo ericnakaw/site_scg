@@ -18,58 +18,91 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <h2>Solicite um orçamento</h2>
                     </header>
                     <div class="w3-container">
-                        <form id="form_contato" action="<?= base_url("contato/email") ?>" method="POST" role="form">
-
-                            <div class="form-group col-xs-12 col-md-12 col-lg-12">
-                                <label for="nome">Nome:</label>
-                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" autofocus required>
+                        <?php echo form_open('contato/email', array('id'=>'form_contato','method'=>'POST','role'=>'form'),''); ?>
+                        <div class="col-xs-12 col-md-12 col-lg-12">
+                            <div class="form-group has-feedback">
+                                <?php 
+                                echo form_label('*Nome Completo:', 'nome', '');
+                                echo form_input(array('name' => 'nome','id'=>'nome','placeholder'=>'Nome Completo','autofocus'=>'autofocus','required'=>'required'), set_value('nome'), 'class="form-control"');
+                                ?>
+                                <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
-                            <div class="form-group col-xs-12 col-md-6 col-lg-6">
-                                <label for="email">E-mail:</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-6">
+                            <div class="form-group has-feedback">
+                                <?php 
+                                echo form_label('*Email:', 'email', '');
+                                echo form_input(array('type' => 'email','name' => 'email','id'=>'email','placeholder'=>'Email','required'=>'required'), set_value('email'), 'class="form-control"');
+                                ?>
+                                <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
-                            <div class="form-group col-xs-12 col-md-6 col-lg-6">
-                                <label for="telefone">Telefone:</label>
-                                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" required>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <?php 
+                                echo form_label('Telefone:', 'telefone', '');
+                                echo form_input(array('type' => 'text','name' => 'telefone','id'=>'telefone','placeholder'=>'Telefone'), set_value('telefone'), 'class="form-control"');
+                                ?>
                             </div>
-                            <div class="form-group col-xs-12 col-md-6 col-lg-6">
-                                <label for="evento">Evento:</label>
-                                <select name="evento" id="evento" class="form-control" required>
-                                    <option value="" disabled selected>Selecione o seu evento</option>
-                                    <option value="Casamento">Casamento</option>
-                                    <option value="Debutante">15 anos</option>
-                                    <option value="Aniversario">Aniversário</option>
-                                    <option value="Infantil">Infantil</option>
-                                    <option value="Corporativo">Corporativo</option>
-                                    <option value="Outros">Outros</option>
-                                </select>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-6">
+                            <div class="form-group has-feedback">
+                                <?php echo form_label('*Evento:', 'evento', ''); 
+                                $options = array(
+                                    ''=>'Selecione o seu evento',
+                                    'Casamento'=>'Casamento',
+                                    'Debutante'=>'Debutante',
+                                    'Aniversario'=>'Aniversario',
+                                    'Infantil'=>'Infantil',
+                                    'Corporativo'=>'Corporativo',
+                                    'Outros'=>'Outros',
+                                    );
+                                echo form_dropdown(array('name'=>'evento','class'=>'form-control','id'=>'evento','required'=>'required'), $options, 'default');
+                                ?>
+                                <span class="form-control-feedback"></span>
                             </div>
-                            <div class="form-group col-xs-12 col-md-6 col-lg-6">
-                                <label for="data">Data do evento:</label>
-                                <input type="date" name="data" id="data" class="form-control" value="" required>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <?php 
+                                echo form_label('Data do evento:', 'data', '');
+                                echo form_input(array('type' => 'date','name' => 'data','id'=>'data','placeholder'=>'Data do evento'), set_value('data'), Array('class'=>'form-control'));
+                                ?>
                             </div>
-                            <div class="form-group col-xs-12 col-md-12 col-lg-12">
-                                <label for="mensagem">Mensagem:</label>
-                                <textarea name="mensagem" id="mensagem" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="col-xs-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <?php echo form_label('*Mensagem:', 'mensagem', '');
+                                echo form_textarea(array('name'=>'mensagem','class'=>'form-control','rows'=>'3','id'=>'mensagem','required'=>'required'), set_value('mensagem'));
+                                ?>
+                                <span class="form-control-feedback" aria-hidden="true"></span>
                             </div>
-                            <div id="return_form_success" class="col-xs-8 col-md-8 col-lg-8" style="display: none">
-                                <div class="alert alert-success alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <strong>Solicitação enviada!</strong><br>
-                                    Entraremos em contato em breve.
-                                </div>
+                        </div>
+                        <div id="return_form_success" class="col-xs-8 col-md-8 col-lg-8" style="display: none">
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong>Solicitação enviada!</strong><br>
+                                Entraremos em contato em breve.
                             </div>
-                            <div id="return_form_error" class="col-xs-8 col-md-8 col-lg-8" style="display: none">
-                                <div class="alert alert-danger alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <strong>Oops correu um erro!</strong><br>
-                                    Envie um email para info@camilagolin.com.br
-                                </div>
+                        </div>
+                        <div id="return_form_error" class="col-xs-8 col-md-8 col-lg-8" style="display: none">
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong>Oops ocorreu um erro!</strong><br>
+                                Envie um email para info@camilagolin.com.br
                             </div>
-                            <div class="col-xs-4 col-md-4 col-lg-4 pull-right">
-                                <button type="submit" class="btn btn-custom pull-right btn-block">Enviar</button>
+                        </div>
+                        <div id="return_form_validacao" class="col-xs-8 col-md-8 col-lg-8" style="display: none">
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong>Oops erro na validação!</strong><br>
+                                <div id="validation_message"></div>
                             </div>
-                        </form>
+                        </div>
+                        <div class="col-xs-4 col-md-4 col-lg-4 pull-right">
+                            <?php echo form_submit(array('name' => 'enviar','id'=>'btnSubmit'), 'Enviar', 'class = "btn btn-custom pull-right btn-block"');?>
+                        </div>
+                        <?php echo form_close(); ?>
                     </div>
                     <footer class="w3-container">
                       <h5></h5>
@@ -100,6 +133,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <hr>
 </div>
 </div>
+<style type="text/css">
+    .input:focus {
+        outline: none !important;
+        border:1px solid red;
+        box-shadow: 0 0 10px #719ECE;
+    }
+</style>
 <script>
     $(document).ready(function () {
         $("#form_contato").on("submit", function (event) {
@@ -107,20 +147,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 type: $(this).attr("method"),
                 url: $(this).attr("action"),
                 data: $(this).serialize(),
-                success: function (result)
+                dataType:'json',
+                beforeSend: function(jqXHR,settings){
+                    $(".form-group").removeClass('has-error');
+                    $(".form-group").removeClass('has-success');
+                    $(".form-control-feedback").removeClass('glyphicon glyphicon-remove');
+                    $(".form-control-feedback").removeClass('glyphicon glyphicon-ok');
+
+                    $("#btnSubmit").prop('disabled', true);
+                },
+                complete:function(jqXHR,settings){
+                    $("#btnSubmit").prop('disabled', false);
+                },
+                success: function (data)
                 {
-                    if (!!result) {
-                        console.log(result);
+                    console.log(data);
+                    if(data.status =='error_validation'){
+                        document.getElementById("validation_message").innerHTML = "";
+                        $.each(data.msg,function( index, element ) {
+                            if(element != ""){
+                                $("#"+index).parent().addClass("has-error");
+                                $($("#"+index).parent().children()[2]).addClass('glyphicon glyphicon-remove');
+                            }else{
+                                $("#"+index).parent().addClass("has-success");
+                                $($("#"+index).parent().children()[2]).addClass('glyphicon glyphicon-ok');
+                            }
+                            document.getElementById("validation_message").innerHTML += data.msg[index];
+                        });
+                        $('#return_form_validacao').slideDown();
+                    }
+                    else if (data.status =='success') {
+                        $('#return_form_validacao').hide();
                         $('#return_form_success').slideDown();
+
                         $("#form_contato")[0].reset();
                     } else {
-                        console.log(result);
                         $('#return_form_error').slideDown();
                     }
                 },
                 error: function (jqXHR, textStatus, errorMessage) {
                     $('#return_form_error').slideDown();
-                    console.log(errorMessage);
                 }
             });
             event.preventDefault();

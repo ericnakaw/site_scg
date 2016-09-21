@@ -51,7 +51,7 @@ small,hr, a{
 }
 
 
-
+/*======================================================================================================================================*/
 /*Custom Bootstrap Navbar Menu*/
 #custom-bootstrap-menu.navbar-default .navbar-brand {
 	color: rgba(92, 50, 12, 1);
@@ -69,13 +69,19 @@ small,hr, a{
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
 	color: rgba(92, 50, 12, 1);
-	background-color: rgba(255, 255, 255, 1);
+	background-color: rgba(92,50,12,0.20);
 }
 #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
 #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
 #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
 	color: rgba(255, 255, 255, 1);
-	background-color: rgba(255, 255, 255, 1);
+	background-color: rgba(92,50,12,0.20);
+}
+/*Css do navbar seletor do portifolio*/
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>li>a:hover,
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>li>a:focus,
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover{
+	background-color: rgba(92,50,12,0.20);
 }
 #custom-bootstrap-menu.navbar-default .navbar-toggle {
 	border-color: #5c320c;
@@ -91,7 +97,7 @@ small,hr, a{
 #custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
 	background-color: #5c320c;
 }
-
+/*======================================================================================================================================*/
 /*Buttom Custom css*/
 .btn-custom {
 	background: #ffffff;
@@ -111,7 +117,7 @@ small,hr, a{
 	border-color: rgba(173, 173, 173, 1);
 	color: #5c320c;
 }
-
+/*======================================================================================================================================*/
 /*Breadcrumb*/
 #breadcrumb{
 	margin-top: 50px !important;
@@ -136,3 +142,4 @@ small,hr, a{
 .breadcrumb>li+li:before {color: rgba(204, 204, 204, 1);
 	content: "\2771\00a0";
 }
+/*======================================================================================================================================*/

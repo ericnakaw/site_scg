@@ -155,6 +155,7 @@ function enviar_email($para, $assunto, $mensagem, $cc = '', $co = '') {
 function breadcrumb() {
     $CI = & get_instance();
     $CI->load->helper('url');
+
     // Buscar a classe
     $classe = str_replace('_', ' ', ucfirst($CI->router->class));
 
@@ -172,7 +173,9 @@ function breadcrumb() {
     } else {
         $metodo = '';
     }
+
     return '<ol id="breadcrumb" class="breadcrumb"><li> ' . anchor('home', 'Home') . $classe . $metodo . '</li></ol>';
+    
 }
 
 /*

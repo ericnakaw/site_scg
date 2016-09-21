@@ -27,6 +27,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 			</div>
 		</div>
+		<style type="text/css" media="screen">
+			.margin-body-top{
+				margin-top: 0px !important;
+			}
+		</style>
 		<?php
 	}
 	?>
