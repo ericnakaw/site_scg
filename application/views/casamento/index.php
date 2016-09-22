@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="row">
 			<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<ul id="da-thumbs" class="da-thumbs">
-					<div class="col-xs-12 col-md-4 col-lg-4">
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<li class="w3-card-2 w3-padding">
 							<a href="<?=base_url('casamento/convite')?>">
 								<img class="img-responsive portfolio_menu w3-card-4" src="<?=base_url('assets/img/uploads/casamento/convite/IMG_6684.jpg')?>" alt="">
@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</h3>
 						</li>
 					</div>
-					<div class="col-xs-12 col-md-4 col-lg-4">
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<li class="w3-card-2 w3-padding">
 							<a href="<?=base_url('casamento/lembranca')?>">
 								<img class="img-responsive portfolio_menu w3-card-4" src="<?=base_url('assets/img/uploads/casamento/lembranca/IMG_7426.jpg')?>" alt="">
@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</h3>
 						</li>
 					</div>
-					<div class="col-xs-12 col-md-4 col-lg-4">
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<li class="w3-card-2 w3-padding">
 							<a href="<?=base_url('casamento/acessorio')?>">
 								<img class="img-responsive portfolio_menu w3-card-4" src="<?=base_url('assets/img/uploads/casamento/acessorio/IMG_7517.jpg')?>" alt="">

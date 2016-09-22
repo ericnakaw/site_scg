@@ -25,11 +25,12 @@ class Corporativo extends CI_Controller {
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
         //call the model function to get the portfolio
         $portfolio = $this->Portfolio_m->get_by_portfolio_item('corporativo', 'convite', $config["per_page"], $data['page']);
         $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
+        $data['cabecalho'] = 'Convite';
+        $data['galeria'] = 'Corporativo';
         set_layout('titulo', 'Corporativo / Convite', true);
         set_layout('conteudo', load_content('corporativo/convite', $data));
         load_layout();
@@ -44,12 +45,12 @@ class Corporativo extends CI_Controller {
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
         //call the model function to get the portfolio
         $portfolio = $this->Portfolio_m->get_by_portfolio_item('corporativo', 'lembranca', $config["per_page"], $data['page']);
         $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
-
+        $data['cabecalho'] = 'Lembrança';
+        $data['galeria'] = 'Corporativo';
         set_layout('titulo', 'Corporativo / Lembranca', true);
         set_layout('conteudo', load_content('corporativo/lembranca', $data));
         load_layout();
@@ -64,12 +65,12 @@ class Corporativo extends CI_Controller {
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
         //call the model function to get the portfolio
         $portfolio = $this->Portfolio_m->get_by_portfolio_item('corporativo', 'acessorio', $config["per_page"], $data['page']);
         $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
-
+        $data['cabecalho'] = 'Acessório';
+        $data['galeria'] = 'Corporativo';
         set_layout('titulo', 'Corporativo / Acessorio', true);
         set_layout('conteudo', load_content('corporativo/acessorio', $data));
         set_layout('template', 'default');

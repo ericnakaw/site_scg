@@ -25,11 +25,12 @@ class Adulto extends CI_Controller {
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
         //call the model function to get the portfolio
         $portfolio = $this->Portfolio_m->get_by_portfolio_item('adulto', 'convite', $config["per_page"], $data['page']);
         $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
+        $data['cabecalho'] = 'Convite';
+        $data['galeria'] = 'Adulto';
         set_layout('titulo', 'Adulto / Convite', true);
         set_layout('conteudo', load_content('adulto/convite', $data));
         load_layout();
@@ -44,12 +45,12 @@ class Adulto extends CI_Controller {
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
         //call the model function to get the portfolio
         $portfolio = $this->Portfolio_m->get_by_portfolio_item('adulto', 'lembranca', $config["per_page"], $data['page']);
         $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
-
+        $data['cabecalho'] = 'Lembrança';
+        $data['galeria'] = 'Adulto';
         set_layout('titulo', 'Adulto / Lembranca', true);
         set_layout('conteudo', load_content('adulto/lembranca', $data));
         load_layout();
@@ -64,12 +65,12 @@ class Adulto extends CI_Controller {
         $config["num_links"] = floor($choice);
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
         //call the model function to get the portfolio
         $portfolio = $this->Portfolio_m->get_by_portfolio_item('adulto', 'acessorio', $config["per_page"], $data['page']);
         $data['portfolio'] = $portfolio['portfolio'];
         $data['paginacao'] = $this->pagination->create_links();
-
+        $data['cabecalho'] = 'Acessório';
+        $data['galeria'] = 'Adulto';
         set_layout('titulo', 'Adulto / Acessorio', true);
         set_layout('conteudo', load_content('adulto/acessorio', $data));
         set_layout('template', 'default');

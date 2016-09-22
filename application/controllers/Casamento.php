@@ -24,12 +24,12 @@ class Casamento extends CI_Controller {
 		$config["num_links"] = floor($choice);
 		$this->pagination->initialize($config);
 		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
         //call the model function to get the portfolio
 		$portfolio = $this->Portfolio_m->get_by_portfolio_item('casamento','convite',$config["per_page"],$data['page']);
 		$data['portfolio'] = $portfolio['portfolio'];
 		$data['paginacao'] = $this->pagination->create_links();
-
+		$data['cabecalho'] = 'Convite';
+        $data['galeria'] = 'Casamento';
 		set_layout('titulo', 'Casamento / Convite', true);
 		set_layout('conteudo', load_content('casamento/convite',$data));
 		set_layout('template', 'default');
@@ -44,12 +44,12 @@ class Casamento extends CI_Controller {
 		$config["num_links"] = floor($choice);
 		$this->pagination->initialize($config);
 		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
         //call the model function to get the portfolio
 		$portfolio = $this->Portfolio_m->get_by_portfolio_item('casamento','lembranca',$config["per_page"],$data['page']);
 		$data['portfolio'] = $portfolio['portfolio'];
 		$data['paginacao'] = $this->pagination->create_links();
-
+		$data['cabecalho'] = 'Lembrança';
+        $data['galeria'] = 'Casamento';
 		set_layout('titulo', 'Casamento / Lembranca', true);
 		set_layout('conteudo', load_content('casamento/lembranca',$data));
 		set_layout('template', 'default');
@@ -64,12 +64,12 @@ class Casamento extends CI_Controller {
 		$config["num_links"] = floor($choice);
 		$this->pagination->initialize($config);
 		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
         //call the model function to get the portfolio
 		$portfolio = $this->Portfolio_m->get_by_portfolio_item('casamento','acessorio',$config["per_page"],$data['page']);
 		$data['portfolio'] = $portfolio['portfolio'];
 		$data['paginacao'] = $this->pagination->create_links();
-		
+		$data['cabecalho'] = 'Acessório';
+        $data['galeria'] = 'Casamento';
 		set_layout('titulo', 'Casamento / Acessorio', true);
 		set_layout('conteudo', load_content('casamento/acessorio',$data));
 		set_layout('template', 'default');
