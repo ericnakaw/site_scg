@@ -11,6 +11,13 @@ $(document).ready(function(){
 			$(" #custom-bootstrap-menu ").css('border-radius', '0px');
 		}
 	});
+	/*Footer: Back to top link span*/
+	if ( ($(window).height() + 100) < $(document).height() ) {
+		$('#top-link-block').removeClass('hidden').affix({
+        // how far to scroll down before link "slides" into view
+        offset: {top:10}
+    });
+	}
 });
 /*Navbar set active link*/
 $(document).ready(function () {
