@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 	{menu}
 	<?php 
-	$controller = array("home", "sobre", "contato", "localizacao");
+	$controller = array("home", "sobre", "contato", "localizacao","inspiracoes","midia","comocomprar");
 
 	if(!in_array($this->router->class, $controller)){
 		?>
@@ -36,6 +36,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 	?>
 	{conteudo}
-	{footer}        
+	<div class="container">
+		<div class="row">
+			{footer} 
+		</div>       
+	</div>       
 </body>
 </html>

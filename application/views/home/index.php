@@ -86,19 +86,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          <img class="img-rounded" src="<?=base_url('assets/img/circulo1.jpg')?>" alt="Generic placeholder image" width="300" height="300"/>
          <h2>Inspirações</h2>
          <p></p>
-         <p><a class="btn btn-default" href="#" role="button">Veja mais &raquo;</a></p>
+         <p><a class="btn btn-default" href="<?=base_url('inspiracoes')?>" role="button">Mais &raquo;</a></p>
        </div><!-- /.col-lg-4 -->
        <div class="col-lg-4">
          <img class="img-rounded" src="<?=base_url('assets/img/circulo2.jpg')?>" alt="Generic placeholder image" width="300" height="300"/>
          <h2>Na mídia</h2>
          <p></p>
-         <p><a class="btn btn-default" href="#" role="button">Veja mais &raquo;</a></p>
+         <p><a class="btn btn-default" href="<?=base_url('midia')?>" role="button">Mais &raquo;</a></p>
        </div><!-- /.col-lg-4 -->
        <div class="col-lg-4">
          <img class="img-rounded" src="<?=base_url('assets/img/circulo3.jpg')?>" alt="Generic placeholder image" width="300" height="300"/>
          <h2>Como comprar</h2>
          <p></p>
-         <p><a class="btn btn-default" href="#" role="button">Veja mais &raquo;</a></p>
+         <p><a class="btn btn-default" href="<?=base_url('comocomprar')?>" role="button">Mais &raquo;</a></p>
        </div><!-- /.col-lg-4 -->
      </div>
      <!-- FIM : PRODUTOS -->
@@ -125,7 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      <div class="featurette">
       <div class="col-md-7 col-md-push-5">
        <h2 class="featurette-heading">Destaques<span class="text-muted"></span></h2>
-       <p class="lead"> se constrói com muito amor, carinho e compreensão. Que estes sentimentos estejam sempre presentes na vida de vocês!</p>
+       <p class="lead"> Um casamento feliz se constrói com muito amor, carinho e compreensão. Que estes sentimentos estejam sempre presentes na vida de vocês!</p>
      </div>
      <div class="col-md-5 col-md-pull-7">
        <img src="<?=base_url('assets/img/retangule2.jpg')?>" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"/>
