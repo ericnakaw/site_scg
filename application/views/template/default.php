@@ -14,6 +14,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	{header}
 </head>
 <body>
+	<style>
+		@font-face {
+			font-family: Convite;
+			src: url('<?= base_url("assets/fonts/Hoftype-Civita-Light.otf")?>');
+		}
+		body {
+			font-family: 'Convite';
+		}
+	</style>
 	{menu}
 	<?php 
 	$controller = array("home", "sobre", "contato", "localizacao","inspiracoes","midia","comocomprar");

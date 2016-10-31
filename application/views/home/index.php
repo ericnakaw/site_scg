@@ -82,26 +82,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- INICIO : PRODUTOS -->
     <div class="container marketing">
       <div class="row">
-        <div class="col-lg-4">
-         <img class="img-rounded" src="<?=base_url('assets/img/circulo1.jpg')?>" alt="Generic placeholder image" width="300" height="300"/>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+         <img class="img-rounded" src="<?=base_url('assets/img/circulo1.jpg')?>" alt="Generic placeholder image" width="250" height="250"/>
          <h2>Inspirações</h2>
          <p></p>
-         <p><a class="btn btn-default" href="<?=base_url('inspiracoes')?>" role="button">Mais &raquo;</a></p>
-       </div><!-- /.col-lg-4 -->
-       <div class="col-lg-4">
-         <img class="img-rounded" src="<?=base_url('assets/img/circulo2.jpg')?>" alt="Generic placeholder image" width="300" height="300"/>
+         <p><a class="btn btn-default" href="<?=base_url('inspiracoes')?>" role="button">Saiba mais &raquo;</a></p>
+       </div>
+       <div class="col-lg-4 col-md-4 col-sm-4">
+         <img class="img-rounded" src="<?=base_url('assets/img/circulo2.jpg')?>" alt="Generic placeholder image" width="250" height="250"/>
          <h2>Na mídia</h2>
          <p></p>
-         <p><a class="btn btn-default" href="<?=base_url('midia')?>" role="button">Mais &raquo;</a></p>
-       </div><!-- /.col-lg-4 -->
-       <div class="col-lg-4">
-         <img class="img-rounded" src="<?=base_url('assets/img/circulo3.jpg')?>" alt="Generic placeholder image" width="300" height="300"/>
+         <p><a class="btn btn-default" href="<?=base_url('midia')?>" role="button">Saiba mais &raquo;</a></p>
+       </div>
+       <div class="col-lg-4 col-md-4 col-sm-4">
+         <img class="img-rounded" src="<?=base_url('assets/img/circulo3.jpg')?>" alt="Generic placeholder image" width="250" height="250"/>
          <h2>Como comprar</h2>
          <p></p>
-         <p><a class="btn btn-default" href="<?=base_url('comocomprar')?>" role="button">Mais &raquo;</a></p>
-       </div><!-- /.col-lg-4 -->
+         <p><a class="btn btn-default" href="<?=base_url('comocomprar')?>" role="button">Saiba mais &raquo;</a></p>
+       </div>
      </div>
-     <!-- FIM : PRODUTOS -->
    </div>
    <!-- FIM : CONTAINER -->
 
@@ -110,28 +109,63 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    <div class="container marketing">
     <hr class="featurette-divider"/>
     <div class="row">
+      <div class="">
+        <div class="col-md-7 col-xs-12">
+         <h2 class="">Parceiros <span class="text-muted"></span></h2>
+         <p class="lead">Quando você compartilha algo, o que sobra multiplica-se e cresce! 
+          (W. Clement Stone).</p>
+          <p class="lead">Alguns de nossos parceiros que se tornaram especiais 
+            e que estão conosco no dia a dia para tornar o seu evento inesquecível!</p>
+          </div>
+          <div class="col-md-5 col-xs-12">
+           <img src="<?=base_url('assets/img/home/featurettes/parceiros.jpg')?>" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="cumprimento entre dois parceiros com aperto de mão"/>
+         </div>
+       </div>
+     </div>
+     <br>
+     <br>
+     <br>
+     <br>
+     <div class="row">
+       <div class="col-md-3 col-sm-6  col-centered">
+        <img class="img-responsive centering portfolio-item" src="<?=base_url('assets/img/home/parceiros/logo_jah_eventos.jpg')?>" alt="logo marca jah eventos">
+      </div>
+      <div class="col-md-3 col-sm-6  col-centered">
+        <img class="img-responsive centering portfolio-item" src="<?=base_url('assets/img/home/parceiros/logo_ranosi.jpg')?>" alt="logo marca ranosi">
+      </div>
+      <div class="col-md-3 col-sm-6  col-centered">
+        <img class="img-responsive centering portfolio-item" src="<?=base_url('assets/img/home/parceiros/logo_bolo_de_caneca.jpg')?>" alt="logo marca bolo de caneca">
+      </div>
+      <div class="col-md-3 col-sm-6  col-centered">
+        <img class="img-responsive centering portfolio-item" src="<?=base_url('assets/img/home/parceiros/logo_etiquette.png')?>" alt="logo marca bolo de caneca">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6  col-centered">
+        <img class="img-responsive centering portfolio-item" src="<?=base_url('assets/img/home/parceiros/logo_diskfesta.jpg')?>" alt="logo marca diskfesta">
+      </div>
+      <div class="col-md-3  col-sm-6  col-centered">
+        <img class="img-responsive centering portfolio-item" src="<?=base_url('assets/img/home/parceiros/logo_mara_duarte_assessoria_de_casamento.png')?>" alt="logo mara duarte assessoria de casamento">
+      </div>
+      <div class="col-md-3  col-sm-6  col-centered">
+        <img class="img-responsive centering portfolio-item" src="<?=base_url('assets/img/home/parceiros/logo-marisa-flores.png')?>" alt="logo marisa-flores">
+      </div>
+    </div>
+    <hr class="featurette-divider"/>
+    <div class="row">
       <div class="featurette">
-        <div class="col-md-7">
-         <h2 class="featurette-heading">Parceiros <span class="text-muted"></span></h2>
-         <p class="lead">Algumas pessoas se tornam especiais porque estão conosco no dia a dia, nos ajudam a suportam a rotina e dão aqueles conselhos certeiros. Essa pessoa é o seu parceiro, e é ótimo valorizar esse laço com as pessoas!</p>
-       </div>
-       <div class="col-md-5">
-         <img src="<?=base_url('assets/img/home/featurettes/parceiros.jpg')?>" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"/>
-       </div>
-     </div>
-   </div>
-   <hr class="featurette-divider"/>
-   <div class="row">
-     <div class="featurette">
-      <div class="col-md-7 col-md-push-5">
-       <h2 class="featurette-heading">Destaques<span class="text-muted"></span></h2>
-       <p class="lead"> Um casamento feliz se constrói com muito amor, carinho e compreensão. Que estes sentimentos estejam sempre presentes na vida de vocês!</p>
-     </div>
-     <div class="col-md-5 col-md-pull-7">
-       <img src="<?=base_url('assets/img/retangule2.jpg')?>" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"/>
-     </div>
-   </div>
- </div>
- <hr class="featurette-divider"/>
-</div>
-   <!-- FIM : FEATURETTES -->
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Destaques<span class="text-muted"></span></h2>
+          <p class="lead"> Um casamento feliz se constrói com muito amor, carinho e compreensão. Que estes sentimentos estejam sempre presentes na vida de vocês!</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img src="<?=base_url('assets/img/retangule2.jpg')?>" class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image"/>
+        </div>
+      </div>
+    </div>
+    <hr class="featurette-divider"/>
+  </div>
+  <!-- FIM : FEATURETTES -->
+  <style>
+
+  </style>

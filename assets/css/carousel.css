@@ -64,6 +64,7 @@ body {
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
+
 /* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
   margin-bottom: 20px;
@@ -75,6 +76,10 @@ body {
 .marketing .col-lg-4 p {
   margin-right: 10px;
   margin-left: 10px;
+}
+.img-rounded{
+  width: 230px;
+  height: auto;
 }
 
 
@@ -92,6 +97,19 @@ body {
   letter-spacing: -1px;
 }
 
+.col-centered {
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+}
+.col-centered img{
+  max-width: 200px;
+}
+
+.centering {
+  float:none;
+  margin:0 auto;
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */

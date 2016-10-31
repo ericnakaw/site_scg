@@ -114,18 +114,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             Atendimento:<br>
             Seg a Sex das 09h00 às 17h30<br>
             Sábados das 10h00 às 13h00 com hora marcada.<br>
-            Rua Emilio Mallet, 1541 – Tatuapé<br>
-            Tel: (11) 3596-9420 / (11) 2076-1035<br>
-            vendas@camilagolin.com.br<br>
+            <a href="https://goo.gl/maps/L7xzwMTnqy32" target="_blank">Rua Emilio Mallet, 1541 – Tatuapé - São Paulo - SP</a><br>
+            Tel: <a href=”tel:1135969420″><strong>(11) 3596-9420</strong></a> / <a href=”tel:1120761035″><strong>(11) 2076-1035</strong></a><br>
+            <a href="mailto:vendas@camilagolin.com.br"><strong><u>vendas@camilagolin.com.br</u></strong></a><br>
             <hr>
             <h3>Loja Jardins</h3>
             Atendimento <b>somente</b> com hora marcada.<br>
             Ter a Sex  das 11h00 às 18h00 <br>
             Sábados das 10h00 às 13h00<br>
-            Rua Haddock Lobo, 131 sl. 303 – Cerqueira César<br>
+            <a href="https://goo.gl/maps/fbqsQtGyngo" target="_blank">
+            Rua Haddock Lobo, 131 sl. 303 – Cerqueira César  - São Paulo - SP</a><br>
             (Estacionamento 1ª hora cortesia com vallet)<br>
-            Tel: (11) 3596-9430<br>
-            vendas2@camilagolin.com.br<br>
+            Tel: <a href=”tel:1135969430″><strong>(11) 3596-9430</strong></a><br>
+            <a href="mailto:vendas2@camilagolin.com.br"><strong><u>vendas2@camilagolin.com.br</u></strong></a><br>
             <hr>
         </div>
     </div>

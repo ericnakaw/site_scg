@@ -9,7 +9,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <?=anchor('home', 'Camila Golin', array('class'=>"navbar-brand",'style'=>"font-size: x-large;font-weight: bold;"));?>
+                    <a href="<?=base_url('')?>" class="navbar-brand">
+                        <img src="<?=base_url('assets/img/home/logo/logoTeste2.png')?>" style="width: 150px;margin-top: -9px;" alt="logo marca da loja">
+                    </a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse navbar-menubuilder"">
                     <ul class="nav navbar-nav navbar-left">
