@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql4.porta80.com.br',
-	'username' => 'camilagolin',
-	'password' => 'mila00',
-	'database' => 'camilagolin',
+	'hostname' => 'db_camilagolin.mysql.dbaas.com.br',
+	'username' => 'db_camilagolin',
+	'password' => 'Mar1ana2ol4',
+	'database' => 'db_camilagolin',
 	/*'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',

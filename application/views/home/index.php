@@ -126,7 +126,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      <br>
      <br>
      <br>
-     <div class="row">
+     <div class="row hidden">
        <div class="col-md-3 col-sm-6  col-centered">
         <img class="img-responsive centering portfolio-item" src="<?=base_url('assets/img/home/parceiros/logo_jah_eventos.jpg')?>" alt="logo marca jah eventos">
       </div>
@@ -137,10 +137,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <img class="img-responsive centering portfolio-item" src="<?=base_url('assets/img/home/parceiros/logo_bolo_de_caneca.jpg')?>" alt="logo marca bolo de caneca">
       </div>
       <div class="col-md-3 col-sm-6  col-centered">
-        <img class="img-responsive centering portfolio-item" src="<?=base_url('assets/img/home/parceiros/logo_etiquette.png')?>" alt="logo marca bolo de caneca">
+        <img class="img-responsive centering portfolio-item" src="<?=base_url('assets/img/home/parceiros/logo_etiquette.png')?>" alt="logo marca etiquete">
       </div>
     </div>
-    <div class="row">
+    <div class="row hidden">
       <div class="col-md-3 col-sm-6  col-centered">
         <img class="img-responsive centering portfolio-item" src="<?=base_url('assets/img/home/parceiros/logo_diskfesta.jpg')?>" alt="logo marca diskfesta">
       </div>
